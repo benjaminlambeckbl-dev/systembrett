@@ -96,8 +96,8 @@
     }
     .hero-tag {
       display: inline-block;
-      background: rgba(26,26,110,0.08);
-      color: var(--navy);
+      background: var(--orange);
+      color: var(--white);
       font-size: 0.73rem; font-weight: 700;
       letter-spacing: 0.09em; text-transform: uppercase;
       padding: 5px 13px; border-radius: 20px;
@@ -111,7 +111,7 @@
       margin-bottom: 20px;
       color: var(--dark);
     }
-    .hero h1 em { font-style: normal; color: var(--navy); }
+    .hero h1 em { font-style: normal; color: var(--orange); }
     .hero-sub {
       font-size: 1.05rem; color: #555;
       max-width: 460px; margin-bottom: 36px;
@@ -693,6 +693,24 @@
     }
     .btn-gold:hover { opacity: 0.9; transform: translateY(-1px); }
 
+    /* ── DEKO SHAPES ─────────────────────────── */
+    .deko {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 50%;
+      border: 3px solid var(--orange);
+      opacity: 0.18;
+    }
+    .deko.square {
+      border-radius: 6px;
+      transform: rotate(18deg);
+    }
+    .deko.navy {
+      border-color: var(--navy);
+      opacity: 0.12;
+    }
+    .has-deko { position: relative; overflow: hidden; }
+
     /* ── WAVE DIVIDERS ────────────────────────── */
     .wave { display: block; width: 100%; overflow: hidden; line-height: 0; }
     .wave svg { display: block; width: 100%; }
@@ -874,7 +892,9 @@
 </div>
 
 <!-- USPs -->
-<section class="usps">
+<section class="usps has-deko">
+  <span class="deko" style="width:200px;height:200px;top:-80px;right:-60px;"></span>
+  <span class="deko square navy" style="width:120px;height:120px;bottom:40px;left:-40px;"></span>
   <div class="section-inner">
     <div class="section-tag">Warum das Systembrett</div>
     <h2 class="section-title">Nicht Holzbrett. Arbeitsmittel.</h2>
@@ -1140,7 +1160,9 @@
 </div>
 
 <!-- FRAMEWORK -->
-<section class="framework" id="system">
+<section class="framework has-deko" id="system">
+  <span class="deko" style="width:260px;height:260px;bottom:-100px;right:-80px;"></span>
+  <span class="deko square" style="width:90px;height:90px;top:60px;left:-30px;transform:rotate(12deg);"></span>
   <div class="section-inner">
     <div class="section-tag">Systemisch handeln</div>
     <h2 class="section-title">Analog & digital. Aus einem Guss.</h2>
@@ -1255,7 +1277,9 @@
 </section>
 
 <!-- GWO -->
-<section class="gwo">
+<section class="gwo has-deko">
+  <span class="deko square navy" style="width:160px;height:160px;top:-50px;right:5%;transform:rotate(22deg);"></span>
+  <span class="deko" style="width:100px;height:100px;bottom:-30px;left:8%;"></span>
   <div class="gwo-inner">
     <div class="gwo-badge">
       <img src="images/gwo-logo.png" alt="Gemeinnützige Werkstätten Oldenburg e.V." style="width:100%; max-width:220px; display:block; margin: 0 auto 16px;" />
@@ -1507,7 +1531,9 @@
 </div>
 
 <!-- CTA BANNER -->
-<div class="cta-banner">
+<div class="cta-banner has-deko">
+  <span class="deko" style="width:300px;height:300px;top:-120px;right:-80px;border-color:#fff;opacity:0.1;"></span>
+  <span class="deko square" style="width:80px;height:80px;bottom:-20px;left:10%;border-color:#fff;opacity:0.12;transform:rotate(30deg);"></span>
   <div style="max-width:700px; margin:0 auto;">
     <h2>Bereit für professionelle Aufstellungsarbeit?</h2>
     <p>Brett. Figuren. Digitaler Raum. Ein durchgängiges System für systemisches Arbeiten – analog &amp; digital.</p>
