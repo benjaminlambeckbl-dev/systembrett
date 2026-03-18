@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Herzlichen Dank – Systembrett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #140d69;
+      --navy2:  #00052f;
+      --orange: #f98d2b;
+      --yellow: #faf041;
+      --off:    #efeff2;
+      --white:  #ffffff;
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off);
+      color: var(--navy2);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e8e8ed;
+      padding: 0 5%;
+      display: flex; align-items: center;
+      height: 68px;
+    }
+    .nav-logo img { height: 36px; display: block; }
+
+    /* MAIN */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 5%;
+    }
+    .thank-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 60px 56px;
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(20,13,105,0.10);
+      position: relative;
+      overflow: hidden;
+    }
+    .thank-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--navy), var(--orange));
+    }
+    .check-circle {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, var(--navy), #2a1fa0);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .check-circle svg { width: 36px; height: 36px; }
+    h1 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .info-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    .info-box {
+      background: var(--off);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .info-box .info-icon {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .info-box strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+    .info-box p {
+      font-size: 0.82rem;
+      color: #777;
+      line-height: 1.5;
+    }
+    .btn-back {
+      display: inline-block;
+      padding: 13px 32px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.93rem;
+      transition: background 0.2s;
+    }
+    .btn-back:hover { background: var(--navy2); }
+    .contact-line {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    .contact-line a { color: var(--orange); text-decoration: none; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy2);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 24px 5%;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 560px) {
+      .thank-card { padding: 40px 28px; }
+      .info-boxes { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="coachingspace" />
+  </a>
+</nav>
+
+<main>
+  <div class="thank-card">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+    </div>
+
+    <h1>Herzlichen Dank<br>für Ihre Bestellung!</h1>
+    <p class="subtitle">
+      Ihre Bestellung ist bei uns eingegangen.<br>
+      Wir freuen uns, dass Sie sich für das Systembrett-Ökosystem entschieden haben.
+    </p>
+
+    <div class="info-boxes">
+      <div class="info-box">
+        <div class="info-icon">📄</div>
+        <strong>Rechnung</strong>
+        <p>Sie erhalten Ihre Rechnung in Kürze per E-Mail.</p>
+      </div>
+      <div class="info-box">
+        <div class="info-icon">📦</div>
+        <strong>Lieferung</strong>
+        <p>Ihr Set wird innerhalb von <strong>14 Tagen</strong> zu Ihnen verschickt.</p>
+      </div>
+      <div class="info-box">
+        <div class="info-icon">🤝</div>
+        <strong>Handgefertigt</strong>
+        <p>Jedes Produkt wird mit Sorgfalt in den GWO Oldenburg gefertigt.</p>
+      </div>
+      <div class="info-box">
+        <div class="info-icon">💬</div>
+        <strong>Fragen?</strong>
+        <p>Wir antworten werktags innerhalb von 24 Stunden.</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-back">Zurück zur Seite</a>
+    <p class="contact-line">
+      Bei Fragen: <a href="mailto:info@lambeck-consulting.de">info@lambeck-consulting.de</a>
+    </p>
+  </div>
+</main>
+
+<footer>
+  Teil des coachingspace-Ökosystems &nbsp;·&nbsp; Lambeck Consulting · Bodenhof 115 · 36129 Gersfeld
+</footer>
+
+</body>
+</html>

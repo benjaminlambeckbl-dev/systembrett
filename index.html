@@ -483,6 +483,26 @@
     }
     .form-selected-badge.visible { display: flex; }
     .form-selected-badge span { opacity: 0.7; font-weight: 400; margin-left: auto; cursor: pointer; }
+    .form-address-block {
+      margin-top: 20px;
+      background: var(--white);
+      border: 1.5px solid var(--gray-1);
+      border-radius: 10px;
+      padding: 20px 20px 4px;
+    }
+    .form-address-title {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .lieferadresse-toggle {
+      display: flex; align-items: center; gap: 10px;
+      margin-top: 16px; cursor: pointer;
+      font-size: 0.88rem; font-weight: 500; color: var(--navy);
+    }
+    .lieferadresse-toggle input[type="checkbox"] {
+      width: 18px; height: 18px; accent-color: var(--navy); cursor: pointer; flex-shrink: 0;
+    }
     .btn-order-submit {
       width: 100%; margin-top: 8px; padding: 15px;
       background: var(--navy); color: var(--white);
@@ -1329,6 +1349,9 @@
     </div>
 
     <form id="order-form-el" action="https://formspree.io/f/mwvrazno" method="POST">
+      <input type="hidden" name="_next" value="https://benjaminlambeckbl-dev.github.io/systembrett/danke.html" />
+      <input type="hidden" name="_subject" value="Neue Bestellung – Systembrett" />
+
       <div class="form-grid">
 
         <div class="form-group full">
@@ -1360,14 +1383,83 @@
           <input type="text" id="f-org" name="organisation" placeholder="z. B. eigene Praxis, Beratungsstelle …" />
         </div>
 
+      </div>
+
+      <!-- RECHNUNGSADRESSE -->
+      <div class="form-address-block">
+        <div class="form-address-title">Rechnungsadresse *</div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="f-strasse">Straße &amp; Hausnummer *</label>
+            <input type="text" id="f-strasse" name="rechnungsadresse_strasse" placeholder="Musterstraße 12" required />
+          </div>
+          <div class="form-group" style="max-width:160px;">
+            <label for="f-plz">PLZ *</label>
+            <input type="text" id="f-plz" name="rechnungsadresse_plz" placeholder="12345" required />
+          </div>
+          <div class="form-group">
+            <label for="f-ort">Ort *</label>
+            <input type="text" id="f-ort" name="rechnungsadresse_ort" placeholder="Stadt" required />
+          </div>
+          <div class="form-group full">
+            <label for="f-land">Land *</label>
+            <select id="f-land" name="rechnungsadresse_land" required>
+              <option value="Deutschland">Deutschland</option>
+              <option value="Österreich">Österreich</option>
+              <option value="Schweiz">Schweiz</option>
+              <option value="Anderes">Anderes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIEFERADRESSE TOGGLE -->
+      <label class="lieferadresse-toggle">
+        <input type="checkbox" id="lieferadresse-check" onchange="toggleLieferadresse(this)" />
+        <span>Lieferadresse weicht von Rechnungsadresse ab</span>
+      </label>
+
+      <!-- LIEFERADRESSE (versteckt) -->
+      <div class="form-address-block" id="lieferadresse-block" style="display:none;">
+        <div class="form-address-title">Lieferadresse</div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="f-l-name">Name / Firma</label>
+            <input type="text" id="f-l-name" name="lieferadresse_name" placeholder="Empfänger·in oder Firma" />
+          </div>
+          <div class="form-group full">
+            <label for="f-l-strasse">Straße &amp; Hausnummer</label>
+            <input type="text" id="f-l-strasse" name="lieferadresse_strasse" placeholder="Musterstraße 12" />
+          </div>
+          <div class="form-group" style="max-width:160px;">
+            <label for="f-l-plz">PLZ</label>
+            <input type="text" id="f-l-plz" name="lieferadresse_plz" placeholder="12345" />
+          </div>
+          <div class="form-group">
+            <label for="f-l-ort">Ort</label>
+            <input type="text" id="f-l-ort" name="lieferadresse_ort" placeholder="Stadt" />
+          </div>
+          <div class="form-group full">
+            <label for="f-l-land">Land</label>
+            <select id="f-l-land" name="lieferadresse_land">
+              <option value="Deutschland">Deutschland</option>
+              <option value="Österreich">Österreich</option>
+              <option value="Schweiz">Schweiz</option>
+              <option value="Anderes">Anderes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-grid" style="margin-top:16px;">
         <div class="form-group full">
           <label for="f-nachricht">Anmerkungen</label>
-          <textarea id="f-nachricht" name="anmerkungen" placeholder="Fragen zum Produkt, Lieferadresse, Sonstiges …"></textarea>
+          <textarea id="f-nachricht" name="anmerkungen" placeholder="Fragen zum Produkt, Sonstiges …"></textarea>
         </div>
-
       </div>
+
       <button type="submit" class="btn-order-submit">Jetzt bestellen →</button>
-      <p class="form-note">* Pflichtfelder &nbsp;·&nbsp; Deine Daten werden ausschließlich zur Bearbeitung deiner Anfrage verwendet.</p>
+      <p class="form-note">* Pflichtfelder &nbsp;·&nbsp; Deine Daten werden ausschließlich zur Bearbeitung deiner Bestellung verwendet.</p>
     </form>
   </div>
 </section>
@@ -1471,6 +1563,11 @@
     badge.classList.add('visible');
 
     document.getElementById('order-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function toggleLieferadresse(checkbox) {
+    const block = document.getElementById('lieferadresse-block');
+    block.style.display = checkbox.checked ? 'block' : 'none';
   }
 
   function clearBundle() {
