@@ -518,9 +518,13 @@
 
     /* ── PRODUCT IMAGE FULL ───────────────────── */
     .product-showcase {
-      background: #efeff2;
+      background: var(--navy);
       padding: 80px 5%;
     }
+    .product-showcase .showcase-text h2,
+    .product-showcase .showcase-text strong { color: var(--white); }
+    .product-showcase .showcase-text p { color: rgba(255,255,255,0.75); }
+    .product-showcase .section-tag { color: var(--orange); }
     .product-showcase .section-inner {
       display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
     }
@@ -659,7 +663,7 @@
       display: flex; flex-direction: column; align-items: center; gap: 16px;
       border: 1px solid var(--gray-1); border-radius: 14px;
       padding: 32px 40px; background: var(--off);
-      min-width: 220px; text-align: center;
+      flex: 1; max-width: 340px; text-align: center;
     }
     .trust-badge img { height: 72px; object-fit: contain; mix-blend-mode: multiply; }
     .trust-badge-text strong { display: block; font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
@@ -802,6 +806,13 @@
   </div>
 </div>
 
+<!-- wave: hero → showcase (navy) -->
+<div class="wave wave-down" style="background:#efeff2;">
+  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C480,44 960,0 1440,32 L1440,44 L0,44 Z" fill="#140d69"/>
+  </svg>
+</div>
+
 <!-- PRODUCT SHOWCASE -->
 <div class="product-showcase">
   <div class="section-inner">
@@ -836,6 +847,13 @@
       </p>
     </div>
   </div>
+</div>
+
+<!-- wave: showcase (navy) → USPs -->
+<div class="wave wave-up" style="background:var(--off);">
+  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C480,44 960,0 1440,32 L1440,0 L0,0 Z" fill="#140d69"/>
+  </svg>
 </div>
 
 <!-- USPs -->
