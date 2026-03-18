@@ -660,13 +660,13 @@
       display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
     }
     .trust-badge {
-      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      display: flex; flex-direction: row; align-items: center; gap: 20px;
       border: 1px solid var(--gray-1); border-radius: 14px;
-      padding: 32px 40px; background: var(--off);
-      flex: 1; max-width: 340px; text-align: center;
+      padding: 24px 32px; background: var(--off);
+      flex: 1; max-width: 380px;
     }
-    .trust-badge img { height: 72px; object-fit: contain; mix-blend-mode: multiply; }
-    .trust-badge-text strong { display: block; font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .trust-badge img { height: 64px; width: 64px; object-fit: contain; mix-blend-mode: multiply; flex-shrink: 0; }
+    .trust-badge-text strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
     .trust-badge-text span { font-size: 0.8rem; color: #777; }
 
     /* ── CTA BANNER ───────────────────────────── */
@@ -1223,7 +1223,7 @@
         <img src="images/DSGVO.png" alt="DSGVO konform – Made and hosted in Germany" style="height:72px; transform:scale(1.4);" />
         <div class="trust-badge-text">
           <strong>DSGVO-konforme Videokonferenz</strong>
-          <span>Made and hosted in Germany</span>
+          <span>Datenschutz nach deutschem Recht</span>
         </div>
       </div>
       <div class="trust-badge">
