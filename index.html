@@ -1328,45 +1328,45 @@
       <span onclick="clearBundle()" title="Auswahl aufheben">✕</span>
     </div>
 
-    <form onsubmit="return false;">
+    <form id="order-form-el" action="https://formspree.io/f/mwvrazno" method="POST">
       <div class="form-grid">
 
         <div class="form-group full">
           <label for="f-bundle">Bundle *</label>
-          <select id="f-bundle" required>
+          <select id="f-bundle" name="bundle" required>
             <option value="">– Bitte wählen –</option>
-            <option value="board">Board only – 119 € inkl. MwSt. (100,00 € zzgl. MwSt.)</option>
-            <option value="starter">Systemisches Starter-Set – 199 € inkl. MwSt. (167,23 € zzgl. MwSt.)</option>
-            <option value="pro">Aufstellungs-Set Pro – 269 € inkl. MwSt. (226,05 € zzgl. MwSt.)</option>
+            <option value="Board only – 119 € inkl. MwSt.">Board only – 119 € inkl. MwSt.</option>
+            <option value="Systemisches Starter-Set – 199 € inkl. MwSt.">Systemisches Starter-Set – 199 € inkl. MwSt.</option>
+            <option value="Aufstellungs-Set Pro – 269 € inkl. MwSt.">Aufstellungs-Set Pro – 269 € inkl. MwSt.</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="f-vorname">Vorname *</label>
-          <input type="text" id="f-vorname" placeholder="Vorname" required />
+          <input type="text" id="f-vorname" name="vorname" placeholder="Vorname" required />
         </div>
         <div class="form-group">
           <label for="f-nachname">Nachname *</label>
-          <input type="text" id="f-nachname" placeholder="Nachname" required />
+          <input type="text" id="f-nachname" name="nachname" placeholder="Nachname" required />
         </div>
 
         <div class="form-group full">
           <label for="f-email">E-Mail *</label>
-          <input type="email" id="f-email" placeholder="deine@email.de" required />
+          <input type="email" id="f-email" name="email" placeholder="deine@email.de" required />
         </div>
 
         <div class="form-group full">
           <label for="f-org">Organisation / Einrichtung</label>
-          <input type="text" id="f-org" placeholder="z. B. eigene Praxis, Beratungsstelle …" />
+          <input type="text" id="f-org" name="organisation" placeholder="z. B. eigene Praxis, Beratungsstelle …" />
         </div>
 
         <div class="form-group full">
           <label for="f-nachricht">Anmerkungen</label>
-          <textarea id="f-nachricht" placeholder="Fragen zum Produkt, Lieferadresse, Sonstiges …"></textarea>
+          <textarea id="f-nachricht" name="anmerkungen" placeholder="Fragen zum Produkt, Lieferadresse, Sonstiges …"></textarea>
         </div>
 
       </div>
-      <button type="submit" class="btn-order-submit">Anfrage absenden →</button>
+      <button type="submit" class="btn-order-submit">Jetzt bestellen →</button>
       <p class="form-note">* Pflichtfelder &nbsp;·&nbsp; Deine Daten werden ausschließlich zur Bearbeitung deiner Anfrage verwendet.</p>
     </form>
   </div>
@@ -1456,9 +1456,9 @@
 
   // ── BUNDLE SELECT + SCROLL TO FORM ───────────
   const bundleMap = {
-    'Board only – 119 €':                  'board',
-    'Systemisches Starter-Set – 199 €':    'starter',
-    'Aufstellungs-Set Pro – 269 €':        'pro',
+    'Board only – 119 €':               'Board only – 119 € inkl. MwSt.',
+    'Systemisches Starter-Set – 199 €': 'Systemisches Starter-Set – 199 € inkl. MwSt.',
+    'Aufstellungs-Set Pro – 269 €':     'Aufstellungs-Set Pro – 269 € inkl. MwSt.',
   };
 
   function selectBundle(label) {
