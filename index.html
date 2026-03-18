@@ -109,7 +109,8 @@
       letter-spacing: -0.03em;
       line-height: 1.12;
       margin-bottom: 20px;
-      color: var(--dark);
+      color: var(--navy);
+      font-weight: 800;
     }
     .hero h1 em { font-style: normal; color: var(--orange); }
     .hero-sub {
@@ -767,6 +768,7 @@
 
     /* ── RESPONSIVE ───────────────────────────── */
     @media (max-width: 900px) {
+      .hero-wrap { overflow: hidden; }
       .hero { grid-template-columns: 1fr; padding: 60px 5%; }
       .product-showcase .section-inner { grid-template-columns: 1fr; }
       .showcase-imgs { grid-template-columns: 1fr; }
