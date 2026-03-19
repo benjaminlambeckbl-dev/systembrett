@@ -704,7 +704,14 @@
     }
     .deko.square {
       border-radius: 6px;
-      transform: rotate(18deg);
+      border-color: var(--orange);
+      opacity: 0.22;
+      /* Systembrett-Linien: 2 horizontal + 2 vertikal wie die Rillen auf dem Brett */
+      background-image:
+        linear-gradient(to right, transparent calc(33% - 1px), var(--orange) calc(33% - 1px), var(--orange) calc(33% + 1px), transparent calc(33% + 1px)),
+        linear-gradient(to right, transparent calc(66% - 1px), var(--orange) calc(66% - 1px), var(--orange) calc(66% + 1px), transparent calc(66% + 1px)),
+        linear-gradient(to bottom, transparent calc(33% - 1px), var(--orange) calc(33% - 1px), var(--orange) calc(33% + 1px), transparent calc(33% + 1px)),
+        linear-gradient(to bottom, transparent calc(66% - 1px), var(--orange) calc(66% - 1px), var(--orange) calc(66% + 1px), transparent calc(66% + 1px));
     }
     .deko.navy {
       border-color: var(--navy);
@@ -896,7 +903,7 @@
 <!-- USPs -->
 <section class="usps has-deko">
   <span class="deko" style="width:200px;height:200px;top:-80px;right:-60px;"></span>
-  <span class="deko square navy" style="width:120px;height:120px;bottom:40px;left:-40px;"></span>
+  <span class="deko square" style="width:120px;height:120px;bottom:40px;left:-40px;"></span>
   <div class="section-inner">
     <div class="section-tag">Warum das Systembrett</div>
     <h2 class="section-title">Nicht Holzbrett. Arbeitsmittel.</h2>
@@ -1280,7 +1287,7 @@
 
 <!-- GWO -->
 <section class="gwo has-deko">
-  <span class="deko square navy" style="width:160px;height:160px;top:-50px;right:5%;transform:rotate(22deg);"></span>
+  <span class="deko square" style="width:160px;height:160px;top:-50px;right:5%;transform:rotate(22deg);"></span>
   <span class="deko" style="width:100px;height:100px;bottom:-30px;left:8%;"></span>
   <div class="gwo-inner">
     <div class="gwo-badge">
