@@ -703,15 +703,13 @@
       opacity: 0.18;
     }
     .deko.square {
-      border-radius: 6px;
+      border-radius: 4px;
       border-color: var(--orange);
-      opacity: 0.22;
-      /* Systembrett-Linien: 2 horizontal + 2 vertikal wie die Rillen auf dem Brett */
-      background-image:
-        linear-gradient(to right, transparent calc(33% - 1px), var(--orange) calc(33% - 1px), var(--orange) calc(33% + 1px), transparent calc(33% + 1px)),
-        linear-gradient(to right, transparent calc(66% - 1px), var(--orange) calc(66% - 1px), var(--orange) calc(66% + 1px), transparent calc(66% + 1px)),
-        linear-gradient(to bottom, transparent calc(33% - 1px), var(--orange) calc(33% - 1px), var(--orange) calc(33% + 1px), transparent calc(33% + 1px)),
-        linear-gradient(to bottom, transparent calc(66% - 1px), var(--orange) calc(66% - 1px), var(--orange) calc(66% + 1px), transparent calc(66% + 1px));
+      opacity: 0.25;
+      transform: rotate(45deg);
+      /* Systemgrenzen-Ecken: kurze Linien nur an den 4 Ecken wie auf dem Systembrett */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%23f98d2b' stroke-width='2' fill='none'%3E%3Cline x1='0' y1='27' x2='27' y2='27'/%3E%3Cline x1='27' y1='0' x2='27' y2='27'/%3E%3Cline x1='73' y1='0' x2='73' y2='27'/%3E%3Cline x1='73' y1='27' x2='100' y2='27'/%3E%3Cline x1='0' y1='73' x2='27' y2='73'/%3E%3Cline x1='27' y1='73' x2='27' y2='100'/%3E%3Cline x1='73' y1='73' x2='100' y2='73'/%3E%3Cline x1='73' y1='73' x2='73' y2='100'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 100% 100%;
     }
     .deko.navy {
       border-color: var(--navy);
@@ -1171,7 +1169,7 @@
 <!-- FRAMEWORK -->
 <section class="framework has-deko" id="system">
   <span class="deko" style="width:260px;height:260px;bottom:-100px;right:-80px;"></span>
-  <span class="deko square" style="width:90px;height:90px;top:60px;left:-30px;transform:rotate(12deg);"></span>
+  <span class="deko square" style="width:90px;height:90px;top:60px;left:-30px;"></span>
   <div class="section-inner">
     <div class="section-tag">Systemisch handeln</div>
     <h2 class="section-title">Analog & digital. Aus einem Guss.</h2>
@@ -1287,7 +1285,7 @@
 
 <!-- GWO -->
 <section class="gwo has-deko">
-  <span class="deko square" style="width:160px;height:160px;top:-50px;right:5%;transform:rotate(22deg);"></span>
+  <span class="deko square" style="width:160px;height:160px;top:-50px;right:5%;"></span>
   <span class="deko" style="width:100px;height:100px;bottom:-30px;left:8%;"></span>
   <div class="gwo-inner">
     <div class="gwo-badge">
@@ -1542,7 +1540,7 @@
 <!-- CTA BANNER -->
 <div class="cta-banner has-deko">
   <span class="deko" style="width:300px;height:300px;top:-120px;right:-80px;border-color:#fff;opacity:0.1;"></span>
-  <span class="deko square" style="width:80px;height:80px;bottom:-20px;left:10%;border-color:#fff;opacity:0.12;transform:rotate(30deg);"></span>
+  <span class="deko square" style="width:80px;height:80px;bottom:-20px;left:10%;border-color:#fff;opacity:0.14;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cg stroke='white' stroke-width='2' fill='none'%3E%3Cline x1='0' y1='27' x2='27' y2='27'/%3E%3Cline x1='27' y1='0' x2='27' y2='27'/%3E%3Cline x1='73' y1='0' x2='73' y2='27'/%3E%3Cline x1='73' y1='27' x2='100' y2='27'/%3E%3Cline x1='0' y1='73' x2='27' y2='73'/%3E%3Cline x1='27' y1='73' x2='27' y2='100'/%3E%3Cline x1='73' y1='73' x2='100' y2='73'/%3E%3Cline x1='73' y1='73' x2='73' y2='100'/%3E%3C/g%3E%3C/svg%3E\");"></span>
   <div style="max-width:700px; margin:0 auto;">
     <h2>Bereit für professionelle Aufstellungsarbeit?</h2>
     <p>Brett. Figuren. Digitaler Raum. Ein durchgängiges System für systemisches Arbeiten – analog &amp; digital.</p>
