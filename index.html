@@ -1502,7 +1502,7 @@
     <h2 class="section-title">Selbst zusammenstellen.</h2>
     <p class="section-sub">
       Einzeln oder im Bundle. Wähle die Produkte, die du brauchst – der Preis passt sich automatisch an.
-      <br><strong>Bundle-Rabatt:</strong> 2 Teile −9 € · 3 Teile −28 €
+      <br><strong>Komplettpaket:</strong> Alle drei Produkte für nur <strong>199 €</strong> (−48 € sparen).
     </p>
 
     <div class="bundle-config">
@@ -1754,7 +1754,13 @@
 
 <script>
   // ── BUNDLE CONFIGURATOR ──────────────────────
-  const BUNDLE_DISCOUNTS = { 1: 0, 2: 9, 3: 28 };
+  function getBundleDiscount(keys) {
+    if (keys.length === 3) return 48;
+    if (keys.length === 2) {
+      return keys.includes('brett') ? 19 : 9;
+    }
+    return 0;
+  }
 
   function toggleConfigItem(el) {
     el.classList.toggle('selected');
@@ -1764,10 +1770,14 @@
   function updateConfigSummary() {
     const selected = document.querySelectorAll('.bundle-config-item.selected');
     const count = selected.length;
+    const keys = [];
     let sum = 0;
-    selected.forEach(i => { sum += parseInt(i.dataset.price, 10); });
+    selected.forEach(i => {
+      keys.push(i.dataset.product);
+      sum += parseInt(i.dataset.price, 10);
+    });
 
-    const discount = BUNDLE_DISCOUNTS[count] || 0;
+    const discount = getBundleDiscount(keys);
     const total = sum - discount;
 
     const labelEl    = document.getElementById('config-label');
@@ -1793,12 +1803,14 @@
     if (selected.length === 0) return;
 
     const names = [];
+    const keys = [];
     let sum = 0;
     selected.forEach(i => {
       names.push(i.dataset.name);
+      keys.push(i.dataset.product);
       sum += parseInt(i.dataset.price, 10);
     });
-    const discount = BUNDLE_DISCOUNTS[selected.length] || 0;
+    const discount = getBundleDiscount(keys);
     const total = sum - discount;
 
     const list = names.join(' + ');
