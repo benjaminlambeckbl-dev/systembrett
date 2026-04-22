@@ -156,8 +156,8 @@
       display: block;
     }
     .board-fade-wrap .fade-a { animation: cycle-a 9s ease-in-out infinite; }
-    .board-fade-wrap .fade-b { animation: cycle-b 9s ease-in-out infinite; }
-    .board-fade-wrap .fade-c { animation: cycle-c 9s ease-in-out infinite; }
+    .board-fade-wrap .fade-b { animation: cycle-b 9s ease-in-out infinite; object-fit: contain; }
+    .board-fade-wrap .fade-c { animation: cycle-c 9s ease-in-out infinite; object-fit: contain; }
     @keyframes cycle-a {
       0%, 28%   { opacity: 1; }
       33%, 94%  { opacity: 0; }
@@ -988,11 +988,11 @@
       <div class="board-label-wrap">
         <div class="board-label label-a">
           <span>Figurenset</span>
-          <span>Kleines Stellwerk</span>
+          <span>Kleines Stellwerk: Aufstellungsfiguren</span>
         </div>
         <div class="board-label label-b">
           <span>Erweiterung</span>
-          <span>Skalierungstreppe</span>
+          <span>Kleines Stellwerk: Skalierungstreppe</span>
         </div>
         <div class="board-label label-c">
           <span>Das Brett</span>
@@ -1032,7 +1032,7 @@
         </div>
         <div class="overview-card-body">
           <div class="overview-designer">Design · Prof. Dr. Holger Lindemann</div>
-          <h3>Kleines Stellwerk</h3>
+          <h3>Kleines Stellwerk:<br>Aufstellungsfiguren</h3>
           <p>Figurenset für systemische Aufstellungsarbeit – Figuren in drei Größen, Würfel, Balken und Schnüre.</p>
           <div class="overview-price">79 € <span>inkl. MwSt.</span></div>
           <a href="#figurenset" class="overview-link">Mehr erfahren →</a>
@@ -1045,7 +1045,7 @@
         </div>
         <div class="overview-card-body">
           <div class="overview-designer">Design · Prof. Dr. Holger Lindemann</div>
-          <h3>Skalierungstreppe</h3>
+          <h3>Kleines Stellwerk:<br>Skalierungstreppe</h3>
           <p>10 magnetische Teile für Intensitäten, Bewertungen und Entwicklungsverläufe – faltbar und handgefertigt.</p>
           <div class="overview-price">49 € <span>inkl. MwSt.</span></div>
           <a href="#treppe" class="overview-link">Mehr erfahren →</a>
@@ -1054,7 +1054,7 @@
 
       <div class="overview-card">
         <div class="overview-card-img">
-          <img src="images/brett-kantig.png" alt="Systembrett">
+          <img src="images/brett-kantig.png" alt="Systembrett" style="object-fit: contain; background: #fff;">
         </div>
         <div class="overview-card-body">
           <div class="overview-designer">Design · Benjamin Lambeck</div>
@@ -1077,7 +1077,7 @@
     </div>
     <div class="stellwerk-text">
       <div class="section-tag">Das Figurenset</div>
-      <h2>Kleines Stellwerk – Figuren mit Methode.</h2>
+      <h2>Kleines Stellwerk: Aufstellungsfiguren.</h2>
       <div class="author-badge">
         <div class="author-avatar">HL</div>
         <div>
@@ -1133,7 +1133,7 @@
       </div>
       <div>
         <div class="section-tag">Erweiterung</div>
-        <h2 class="section-title">Skalierungstreppe – Intensität sichtbar machen.</h2>
+        <h2 class="section-title">Kleines Stellwerk: Skalierungstreppe.</h2>
         <p style="font-size: 0.93rem; color: #555; line-height: 1.72; margin-bottom: 12px;">
           Die Skalierungstreppe besteht aus <strong>10 magnetisch verbundenen Teilen</strong>
           und wurde speziell für die Verwendung mit den Aufstellungsfiguren des Kleinen Stellwerks
@@ -1508,21 +1508,21 @@
     <div class="bundle-config">
       <div class="bundle-config-items">
 
-        <div class="bundle-config-item" data-product="figuren" data-price="79" data-name="Kleines Stellwerk (Figurenset)" onclick="toggleConfigItem(this)">
+        <div class="bundle-config-item" data-product="figuren" data-price="79" data-name="Kleines Stellwerk: Aufstellungsfiguren" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <div class="bundle-config-name">Figurenset</div>
-          <h4>Kleines Stellwerk</h4>
+          <h4>Kleines Stellwerk:<br>Aufstellungsfiguren</h4>
           <div class="bundle-config-price">79 €</div>
         </div>
 
-        <div class="bundle-config-item" data-product="treppe" data-price="49" data-name="Skalierungstreppe" onclick="toggleConfigItem(this)">
+        <div class="bundle-config-item" data-product="treppe" data-price="49" data-name="Kleines Stellwerk: Skalierungstreppe" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <div class="bundle-config-name">Erweiterung</div>
-          <h4>Skalierungstreppe</h4>
+          <h4>Kleines Stellwerk:<br>Skalierungstreppe</h4>
           <div class="bundle-config-price">49 €</div>
         </div>
 
