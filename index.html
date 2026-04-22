@@ -143,32 +143,35 @@
     .board-fade-wrap {
       position: relative;
       width: 100%;
+      aspect-ratio: 4 / 3;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 40px rgba(26,26,110,0.2);
+      background: #fff;
     }
     .board-fade-wrap img {
-      width: 100%; display: block;
-    }
-    .board-fade-wrap .fade-front {
-      position: relative;
-      animation: fadeOut 6s ease-in-out infinite;
-    }
-    .board-fade-wrap .fade-back {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
       object-fit: cover;
-      animation: fadeIn 6s ease-in-out infinite;
+      display: block;
     }
-    @keyframes fadeOut {
-      0%,  40% { opacity: 1; }
-      50%, 90% { opacity: 0; }
-      100%     { opacity: 1; }
+    .board-fade-wrap .fade-a { animation: cycle-a 9s ease-in-out infinite; }
+    .board-fade-wrap .fade-b { animation: cycle-b 9s ease-in-out infinite; }
+    .board-fade-wrap .fade-c { animation: cycle-c 9s ease-in-out infinite; }
+    @keyframes cycle-a {
+      0%, 28%   { opacity: 1; }
+      33%, 94%  { opacity: 0; }
+      100%      { opacity: 1; }
     }
-    @keyframes fadeIn {
-      0%,  40% { opacity: 0; }
-      50%, 90% { opacity: 1; }
-      100%     { opacity: 0; }
+    @keyframes cycle-b {
+      0%, 28%   { opacity: 0; }
+      33%, 61%  { opacity: 1; }
+      66%, 100% { opacity: 0; }
+    }
+    @keyframes cycle-c {
+      0%, 61%   { opacity: 0; }
+      66%, 94%  { opacity: 1; }
+      100%      { opacity: 0; }
     }
     /* Seiten-Label unter dem Brett */
     .board-label-wrap {
@@ -189,8 +192,9 @@
       font-size: 1rem; font-weight: 700;
       color: var(--navy); letter-spacing: -0.01em;
     }
-    .label-front { animation: fadeOut 6s ease-in-out infinite; }
-    .label-back  { animation: fadeIn  6s ease-in-out infinite; }
+    .label-a { animation: cycle-a 9s ease-in-out infinite; }
+    .label-b { animation: cycle-b 9s ease-in-out infinite; }
+    .label-c { animation: cycle-c 9s ease-in-out infinite; }
 
     /* ── SECTION BASE ─────────────────────────── */
     section { padding: 80px 5%; }
@@ -971,11 +975,9 @@
       <div class="hero-tag">Für systemische Aufstellungsarbeit</div>
       <h1>Systemisch aufstellen.<br>Analog <em>erleben.</em><br>Digital weiterführen.</h1>
       <p class="hero-sub">
-        Das Systembrett ist das Werkzeug für professionelle systemische
-        Aufstellungsarbeit – im Raum greifbar, mit Figuren, Seilen und
-        einer bewusst gestalteten Arbeitsfläche. Zwei Systemgrenzen,
-        eine kantig, eine rund – für unterschiedliche Dynamiken.
-        coachingspace führt den Prozess nahtlos digital weiter.
+        Brett, Figuren und Treppe – das Ökosystem für professionelle systemische
+        Aufstellungsarbeit. Im Raum greifbar, methodisch präzise, handwerklich
+        hochwertig. coachingspace führt den Prozess nahtlos digital weiter.
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="#bundles">Bundle entdecken</a>
@@ -984,18 +986,23 @@
     </div>
     <div>
       <div class="board-label-wrap">
-        <div class="board-label label-front">
-          <span>Vorderseite</span>
-          <span>Lineare Systemgrenzen</span>
+        <div class="board-label label-a">
+          <span>Figurenset</span>
+          <span>Kleines Stellwerk</span>
         </div>
-        <div class="board-label label-back">
-          <span>Rückseite</span>
-          <span>Kreisförmige Systemgrenzen</span>
+        <div class="board-label label-b">
+          <span>Erweiterung</span>
+          <span>Skalierungstreppe</span>
+        </div>
+        <div class="board-label label-c">
+          <span>Das Brett</span>
+          <span>Systembrett · 400 × 400 × 15 mm</span>
         </div>
       </div>
       <div class="board-fade-wrap">
-        <img class="fade-front" src="images/brett-kantig.png" alt="Systembrett – kantige Systemgrenze" />
-        <img class="fade-back"  src="images/brett-rund.png"   alt="Systembrett – runde Systemgrenze" />
+        <img class="fade-a" src="images/ABB-00_NEU.jpg" alt="Figurenset Kleines Stellwerk" />
+        <img class="fade-b" src="images/20260408_091544.jpg" alt="Skalierungstreppe" />
+        <img class="fade-c" src="images/brett-kantig.png" alt="Systembrett" />
       </div>
     </div>
   </div>
