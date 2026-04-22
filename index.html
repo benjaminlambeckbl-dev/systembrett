@@ -61,7 +61,7 @@
 
     /* ── HERO ──────────────────────────────────── */
     .hero-wrap {
-      background: #efeff2;
+      background: var(--white);
       position: relative;
     }
     /* Deko-Kreise */
@@ -248,7 +248,7 @@
     }
 
     /* ── USPs ─────────────────────────────────── */
-    .usps { background: var(--off); }
+    .usps { background: var(--white); }
     .usps-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
       grid-auto-rows: 1fr;
@@ -292,7 +292,7 @@
     }
     .overview-card-img {
       aspect-ratio: 4 / 3;
-      overflow: hidden; background: var(--off);
+      overflow: hidden; background: var(--white);
     }
     .overview-card-img img {
       width: 100%; height: 100%;
@@ -476,7 +476,7 @@
     .booklet-thumb {
       width: 110px; flex-shrink: 0;
       border-radius: 8px; overflow: hidden;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.18);
+      box-shadow: 0 3px 14px rgba(20,13,105,0.18);
     }
     .booklet-thumb img { width: 100%; display: block; }
     .booklet-info { font-size: 0.85rem; color: var(--navy); line-height: 1.6; }
@@ -600,7 +600,7 @@
 
     /* ── ORDER FORM ───────────────────────────── */
     .order-form-section {
-      background: var(--off); padding: 72px 5%;
+      background: var(--white); padding: 72px 5%;
       border-top: 1px solid var(--gray-1);
     }
     .order-form-inner {
@@ -711,7 +711,7 @@
     }
 
     /* ── SPECS ────────────────────────────────── */
-    .specs { background: var(--off); }
+    .specs { background: var(--white); }
     .specs-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 48px; align-items: start; margin-top: 48px;
@@ -819,7 +819,7 @@
     .trust-badge {
       display: flex; flex-direction: row; align-items: center; gap: 20px;
       border: 1px solid var(--gray-1); border-radius: 14px;
-      padding: 24px 32px; background: var(--off);
+      padding: 24px 32px; background: var(--white);
       flex: 1; max-width: 380px;
     }
     .trust-badge img { height: 64px; width: 64px; object-fit: contain; mix-blend-mode: multiply; flex-shrink: 0; }
@@ -892,7 +892,7 @@
 
     /* ── IMPRESSUM ────────────────────────────── */
     .impressum {
-      background: #060b20; color: rgba(255,255,255,0.45);
+      background: var(--navy2); color: rgba(255,255,255,0.45);
       padding: 48px 5%; font-size: 0.82rem; line-height: 1.7;
     }
     .impressum-inner {
@@ -1009,7 +1009,7 @@
 </div>
 
 <!-- wave: hero → overview (off → white) -->
-<div class="wave wave-down" style="background:#efeff2; position: relative; z-index: 1;">
+<div class="wave wave-down" style="background:var(--white); position: relative; z-index: 1;">
   <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,0 C480,44 960,0 1440,32 L1440,44 L0,44 Z" fill="#ffffff"/>
   </svg>
@@ -1147,10 +1147,10 @@
           Gemeinnützigen Werkstätten Oldenburg (GWO e.V.).
         </p>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
-          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">10 Magnetteile</span>
-          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Faltbar (13×9×2,5 cm)</span>
-          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Handgefertigt · GWO Oldenburg</span>
-          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Kompatibel mit Kleines Stellwerk</span>
+          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">10 Magnetteile</span>
+          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Faltbar (13×9×2,5 cm)</span>
+          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Handgefertigt · GWO Oldenburg</span>
+          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Kompatibel mit Kleines Stellwerk</span>
         </div>
       </div>
     </div>
@@ -1204,7 +1204,7 @@
 </div>
 
 <!-- wave: brett (navy) → USPs (off) -->
-<div class="wave wave-up" style="background:var(--off);">
+<div class="wave wave-up" style="background:var(--white);">
   <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,20 C480,44 960,0 1440,32 L1440,0 L0,0 Z" fill="#140d69"/>
   </svg>
@@ -1339,7 +1339,7 @@
 </section>
 
 <!-- wave: off → navy (framework) -->
-<div class="wave wave-down" style="background:var(--off);">
+<div class="wave wave-down" style="background:var(--white);">
   <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,0 C480,44 960,0 1440,32 L1440,44 L0,44 Z" fill="#140d69"/>
   </svg>
@@ -1576,7 +1576,7 @@
           <label for="f-bundle">Deine Auswahl *</label>
           <input type="text" id="f-bundle" name="bundle" readonly required
                  placeholder="Bitte oben Produkte auswählen"
-                 style="background: var(--off); cursor: pointer;"
+                 style="background: var(--white); cursor: pointer;"
                  onclick="document.getElementById('bundles').scrollIntoView({behavior:'smooth'});" />
         </div>
 
