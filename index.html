@@ -269,6 +269,159 @@
     .usp-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 9px; }
     .usp-card p { font-size: 0.86rem; color: #777; line-height: 1.58; flex: 1; }
 
+    /* ── OVERVIEW (3 Produkte) ─────────────────── */
+    .overview-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 48px;
+    }
+    .overview-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-1);
+      border-radius: 14px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .overview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(20,13,105,0.12);
+      border-color: var(--gray-2);
+    }
+    .overview-card-img {
+      aspect-ratio: 4 / 3;
+      overflow: hidden; background: var(--off);
+    }
+    .overview-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .overview-card-body {
+      padding: 24px; display: flex;
+      flex-direction: column; flex: 1;
+    }
+    .overview-designer {
+      font-size: 0.7rem; font-weight: 700;
+      color: var(--orange); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .overview-card h3 {
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--navy); letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .overview-card > .overview-card-body > p {
+      font-size: 0.88rem; color: #666;
+      line-height: 1.6; margin-bottom: 18px; flex: 1;
+    }
+    .overview-price {
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--dark); letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .overview-price span {
+      font-size: 0.75rem; font-weight: 400;
+      color: var(--gray-3);
+    }
+    .overview-link {
+      color: var(--navy); font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; align-self: flex-start;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .overview-link:hover { border-bottom-color: var(--navy); }
+    @media (max-width: 760px) {
+      .overview-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── BUNDLE CONFIGURATOR ──────────────────── */
+    .bundle-config {
+      max-width: 900px; margin: 48px auto 0;
+      background: var(--white);
+      border: 1.5px solid var(--gray-1);
+      border-radius: 16px; overflow: hidden;
+    }
+    .bundle-config-items {
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .bundle-config-item {
+      padding: 26px 22px; cursor: pointer;
+      border-right: 1px solid var(--gray-1);
+      transition: background 0.15s, border-color 0.15s;
+      position: relative;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .bundle-config-item:last-child { border-right: none; }
+    .bundle-config-item:hover { background: #fafafd; }
+    .bundle-config-item.selected {
+      background: rgba(20,13,105,0.04);
+    }
+    .bundle-config-check {
+      position: absolute; top: 16px; right: 16px;
+      width: 22px; height: 22px;
+      border: 2px solid var(--gray-2);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+    }
+    .bundle-config-item.selected .bundle-config-check {
+      background: var(--navy); border-color: var(--navy);
+    }
+    .bundle-config-check svg {
+      width: 14px; height: 14px; color: #fff;
+      opacity: 0; transition: opacity 0.15s;
+    }
+    .bundle-config-item.selected .bundle-config-check svg { opacity: 1; }
+    .bundle-config-name {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gray-3);
+    }
+    .bundle-config-item h4 {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--navy); letter-spacing: -0.02em;
+    }
+    .bundle-config-price {
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--dark); margin-top: 6px;
+    }
+    .bundle-config-summary {
+      background: var(--navy); color: var(--white);
+      padding: 24px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .bundle-config-summary-left {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .bundle-config-summary-label {
+      font-size: 0.78rem; font-weight: 600;
+      color: rgba(255,255,255,0.6); letter-spacing: 0.04em;
+    }
+    .bundle-config-summary-total {
+      font-size: 1.8rem; font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .bundle-config-summary-discount {
+      font-size: 0.8rem; color: var(--orange2);
+      font-weight: 600;
+    }
+    .bundle-config-cta {
+      background: var(--orange); color: var(--white);
+      padding: 14px 28px; border: none;
+      border-radius: 8px; font-family: 'Inter', sans-serif;
+      font-size: 0.95rem; font-weight: 600; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .bundle-config-cta:hover { background: var(--orange2); }
+    .bundle-config-cta:disabled {
+      background: rgba(255,255,255,0.15);
+      cursor: not-allowed;
+    }
+    @media (max-width: 760px) {
+      .bundle-config-items { grid-template-columns: 1fr; }
+      .bundle-config-item { border-right: none; border-bottom: 1px solid var(--gray-1); }
+      .bundle-config-item:last-child { border-bottom: none; }
+    }
+
     /* ── STELLWERK ────────────────────────────── */
     .stellwerk { background: var(--white); }
     .stellwerk-inner {
@@ -825,8 +978,8 @@
         coachingspace führt den Prozess nahtlos digital weiter.
       </p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#order-form">Bundle entdecken</a>
-        <a class="btn-secondary" href="#system">Das System kennenlernen</a>
+        <a class="btn-primary" href="#bundles">Bundle entdecken</a>
+        <a class="btn-secondary" href="#products">Das System kennenlernen</a>
       </div>
     </div>
     <div>
@@ -848,15 +1001,164 @@
   </div>
 </div>
 
-<!-- wave: hero → showcase (navy) -->
+<!-- wave: hero → overview (off → white) -->
 <div class="wave wave-down" style="background:#efeff2; position: relative; z-index: 1;">
+  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C480,44 960,0 1440,32 L1440,44 L0,44 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- OVERVIEW: Drei Produkte gleichberechtigt -->
+<section class="overview" id="products" style="padding: 80px 5%; background: var(--white);">
+  <div class="section-inner">
+    <div class="section-tag">Das System</div>
+    <h2 class="section-title">Drei Produkte. Eine Methode.</h2>
+    <p class="section-sub">
+      Brett, Figuren und Treppe – einzeln einsetzbar, in Kombination unschlagbar.
+      Frei wählbar als Einzelprodukt oder im Bundle.
+    </p>
+    <div class="overview-grid">
+
+      <div class="overview-card">
+        <div class="overview-card-img">
+          <img src="images/ABB-00_NEU.jpg" alt="Kleines Stellwerk – Figurenset">
+        </div>
+        <div class="overview-card-body">
+          <div class="overview-designer">Design · Holger Lindemann</div>
+          <h3>Kleines Stellwerk</h3>
+          <p>Figurenset für systemische Aufstellungsarbeit – Figuren in drei Größen, Würfel, Balken und Schnüre.</p>
+          <div class="overview-price">79 € <span>inkl. MwSt.</span></div>
+          <a href="#figurenset" class="overview-link">Mehr erfahren →</a>
+        </div>
+      </div>
+
+      <div class="overview-card">
+        <div class="overview-card-img">
+          <img src="images/20260408_091544.jpg" alt="Skalierungstreppe">
+        </div>
+        <div class="overview-card-body">
+          <div class="overview-designer">Design · Holger Lindemann</div>
+          <h3>Skalierungstreppe</h3>
+          <p>10 magnetische Teile für Intensitäten, Bewertungen und Entwicklungsverläufe – faltbar und handgefertigt.</p>
+          <div class="overview-price">49 € <span>inkl. MwSt.</span></div>
+          <a href="#treppe" class="overview-link">Mehr erfahren →</a>
+        </div>
+      </div>
+
+      <div class="overview-card">
+        <div class="overview-card-img">
+          <img src="images/brett-kantig.png" alt="Systembrett">
+        </div>
+        <div class="overview-card-body">
+          <div class="overview-designer">Design · Benjamin Lambeck</div>
+          <h3>Systembrett</h3>
+          <p>Beidseitig nutzbar – kantige und runde Systemgrenze, 400 × 400 × 15 mm, Multiplex perlbeschichtet.</p>
+          <div class="overview-price">119 € <span>inkl. MwSt.</span></div>
+          <a href="#brett" class="overview-link">Mehr erfahren →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STELLWERK -->
+<section id="figurenset" class="stellwerk" style="padding: 80px 5%;">
+  <div class="stellwerk-inner">
+    <div class="stellwerk-img">
+      <img src="images/ABB-00_NEU.jpg" alt="Kleines Stellwerk – Figurenset von Prof. Dr. Holger Lindemann" />
+    </div>
+    <div class="stellwerk-text">
+      <div class="section-tag">Das Figurenset</div>
+      <h2>Kleines Stellwerk – Figuren mit Methode.</h2>
+      <div class="author-badge">
+        <div class="author-avatar">HL</div>
+        <div>
+          <h4>Prof. Dr. Holger Lindemann</h4>
+          <p>Autor, Systemischer Berater &amp; Designer des Figurensets</p>
+        </div>
+      </div>
+      <p>
+        Das „Kleine Stellwerk" ist ein durchdachtes Figurenset für die systemische
+        Aufstellungsarbeit – entwickelt von <strong>Prof. Dr. Holger Lindemann</strong>,
+        Autor zahlreicher Fachbücher zur systemischen Beratung und Aufstellungsarbeit.
+      </p>
+      <p>
+        Die Kombination aus Figuren, Balken, Seilen macht
+        Beziehungen, Rollen und Dynamiken im System sichtbar – methodisch präzise,
+        handwerklich hochwertig.
+      </p>
+      <ul class="stellwerk-items">
+        <li>4 große eckige Figuren</li>
+        <li>4 mittlere eckige Figuren</li>
+        <li>4 kleine eckige Figuren</li>
+        <li>4 große runde Figuren</li>
+        <li>4 mittlere runde Figuren</li>
+        <li>4 kleine runde Figuren</li>
+        <li>10 Würfel</li>
+        <li>6 kurze Balken</li>
+        <li>6 lange Balken</li>
+        <li>8 Schnüre in vier Farben, je 1 m</li>
+        <li>Digitales Anleitungs-Booklet</li>
+        <li>Kompatibel mit dem Systembrett</li>
+      </ul>
+      <div class="booklet-row">
+        <div class="booklet-thumb">
+          <img src="images/stellwerk-booklet.png" alt="Booklet: kleines Stellwerk" />
+        </div>
+        <div class="booklet-info">
+          <strong>Inkl. Anleitungs-Booklet</strong><br>
+          „kleines Stellwerk – Aufstellungsfiguren &amp; Skalierungstreppe"<br>
+          von Holger Lindemann<br>
+          <span style="color:#aaa;">Vandenhoeck &amp; Ruprecht (V&amp;R)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREPPE -->
+<section id="treppe" style="padding: 80px 5%; background: var(--white);">
+  <div class="section-inner">
+    <div class="treppe-grid">
+      <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 6px 28px rgba(26,26,110,0.13);">
+        <img src="images/ABB-33-Figuren_02.JPG" alt="Skalierungstreppe – kleines Stellwerk" style="width: 100%; display: block;" />
+      </div>
+      <div>
+        <div class="section-tag">Erweiterung</div>
+        <h2 class="section-title">Skalierungstreppe – Intensität sichtbar machen.</h2>
+        <p style="font-size: 0.93rem; color: #555; line-height: 1.72; margin-bottom: 12px;">
+          Die Skalierungstreppe besteht aus <strong>10 magnetisch verbundenen Teilen</strong>
+          und wurde speziell für die Verwendung mit den Aufstellungsfiguren des Kleinen Stellwerks
+          entwickelt. Sie macht Intensitäten, Bewertungen und Entwicklungsverläufe
+          direkt im Aufstellungsraum sichtbar.
+        </p>
+        <p style="font-size: 0.93rem; color: #555; line-height: 1.72; margin-bottom: 20px;">
+          Dank der Magnetverbindungen lassen sich die Stufen einfach auseinanderklappen
+          oder platzsparend zusammenfalten – im zusammengefalteten Zustand nur
+          <strong>13 × 9 × 2,5 cm</strong>. Handgefertigt in den
+          Gemeinnützigen Werkstätten Oldenburg (GWO e.V.).
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
+          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">10 Magnetteile</span>
+          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Faltbar (13×9×2,5 cm)</span>
+          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Handgefertigt · GWO Oldenburg</span>
+          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Kompatibel mit Kleines Stellwerk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave: treppe (white) → brett (navy) -->
+<div class="wave wave-down" style="background:var(--white);">
   <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,0 C480,44 960,0 1440,32 L1440,44 L0,44 Z" fill="#140d69"/>
   </svg>
 </div>
 
-<!-- PRODUCT SHOWCASE -->
-<div class="product-showcase">
+<!-- PRODUCT SHOWCASE (Brett) -->
+<div id="brett" class="product-showcase">
   <div class="section-inner">
     <div class="showcase-imgs">
       <div>
@@ -875,6 +1177,9 @@
     <div class="showcase-text">
       <div class="section-tag">Das Brett</div>
       <h2>Beidseitig. Bewusst gestaltet. Einzigartig.</h2>
+      <p style="font-size: 0.88rem; color: rgba(255,255,255,0.75); margin-bottom: 18px;">
+        Design: <a href="https://lambeck-consulting.de/" target="_blank" rel="noopener" style="color: var(--orange); text-decoration: none; border-bottom: 1px solid rgba(249,141,43,0.4);">Benjamin Lambeck</a>
+      </p>
       <p>
         Auf der einen Seite eine klare, kantige Systemgrenze – präzise gefräst in Multiplex,
         perlbeschichtet weiß. Für Aufstellungen, die Struktur und klare Abgrenzungen brauchen.
@@ -891,14 +1196,14 @@
   </div>
 </div>
 
-<!-- wave: showcase (navy) → USPs -->
+<!-- wave: brett (navy) → USPs (off) -->
 <div class="wave wave-up" style="background:var(--off);">
   <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,20 C480,44 960,0 1440,32 L1440,0 L0,0 Z" fill="#140d69"/>
   </svg>
 </div>
 
-<!-- USPs -->
+<!-- USPs (Brett-spezifisch) -->
 <section class="usps has-deko">
   <span class="deko" style="width:200px;height:200px;top:-80px;right:-60px;"></span>
   <span class="deko square" style="width:120px;height:120px;bottom:40px;left:-40px;"></span>
@@ -980,163 +1285,8 @@
           </svg>
         </div>
         <h4>Teil eines Ökosystems</h4>
-        <p>Figuren, Seile, Skalierungstreppe und coachingspace –
+        <p>Figuren, Skalierungstreppe und coachingspace –
           alles greift methodisch ineinander.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- wave: off → white (stellwerk) -->
-<div class="wave wave-down" style="background:var(--off);">
-  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,40 C480,0 960,44 1440,16 L1440,44 L0,44 Z" fill="#ffffff"/>
-  </svg>
-</div>
-
-<!-- STELLWERK -->
-<section class="stellwerk" style="padding: 80px 5%;">
-  <div class="stellwerk-inner">
-    <div class="stellwerk-img">
-      <img src="images/ABB-00_NEU.jpg" alt="Kleines Stellwerk – Figurenset von Prof. Dr. Holger Lindemann" />
-    </div>
-    <div class="stellwerk-text">
-      <div class="section-tag">Das Figurenset</div>
-      <h2>Kleines Stellwerk – Figuren mit Methode.</h2>
-      <div class="author-badge">
-        <div class="author-avatar">HL</div>
-        <div>
-          <h4>Prof. Dr. Holger Lindemann</h4>
-          <p>Autor, Systemischer Berater &amp; Designer des Figurensets</p>
-        </div>
-      </div>
-      <p>
-        Das „Kleine Stellwerk" ist ein durchdachtes Figurenset für die systemische
-        Aufstellungsarbeit – entwickelt von <strong>Prof. Dr. Holger Lindemann</strong>,
-        Autor zahlreicher Fachbücher zur systemischen Beratung und Aufstellungsarbeit.
-      </p>
-      <p>
-        Die Kombination aus Figuren, Balken, Seilen macht
-        Beziehungen, Rollen und Dynamiken im System sichtbar – methodisch präzise,
-        handwerklich hochwertig.
-      </p>
-      <ul class="stellwerk-items">
-        <li>4 große eckige Figuren</li>
-        <li>4 mittlere eckige Figuren</li>
-        <li>4 kleine eckige Figuren</li>
-        <li>4 große runde Figuren</li>
-        <li>4 mittlere runde Figuren</li>
-        <li>4 kleine runde Figuren</li>
-        <li>10 Würfel</li>
-        <li>6 kurze Balken</li>
-        <li>6 lange Balken</li>
-        <li>8 Schnüre in vier Farben, je 1 m</li>
-        <li>Digitales Anleitungs-Booklet</li>
-        <li>Kompatibel mit dem Systembrett</li>
-      </ul>
-      <div class="booklet-row">
-        <div class="booklet-thumb">
-          <img src="images/stellwerk-booklet.png" alt="Booklet: kleines Stellwerk" />
-        </div>
-        <div class="booklet-info">
-          <strong>Inkl. Anleitungs-Booklet</strong><br>
-          „kleines Stellwerk – Aufstellungsfiguren &amp; Skalierungstreppe"<br>
-          von Holger Lindemann<br>
-          <span style="color:#aaa;">Vandenhoeck &amp; Ruprecht (V&amp;R)</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- wave: white → navy (seile) -->
-<div class="wave wave-down" style="background:var(--white);">
-  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,40 C360,0 1080,44 1440,14 L1440,44 L0,44 Z" fill="#140d69"/>
-  </svg>
-</div>
-
-<!-- SEILE -->
-<section class="seile">
-  <div class="seile-inner">
-    <div class="seile-text">
-      <div class="section-tag">Erweiterung</div>
-      <h2>Strukturseile – Grenzen flexibel denken.</h2>
-      <p>
-        Systemgrenzen sind selten starr. Die Strukturseile ermöglichen es, Grenzen,
-        Zugehörigkeiten und Verbindungen zwischen Elementen sichtbar und veränderbar
-        zu machen – ohne feste Formen vorzugeben.
-      </p>
-      <p>
-        Strukturseile finden in vielen verschiedenen Methoden Verwendung, wie beispielsweise
-        der Timelinearbeit, der Strukturarbeit im Raum und der Aufstellungsarbeit.
-      </p>
-      <p>
-        Unsere Strukturseile bestehen aus 16-fach geflochtener Polypropylenfaser und haben
-        eine Stärke von 8 mm. Die Seile sind in beliebiger Länge in sieben Farben erhältlich.
-        Die Enden werden mit schwarzen Kunststoffkappen fest verödet, sodass sie nicht ausfransen.
-        Mindestlänge: 10 Meter.
-      </p>
-      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 6px;">
-        Preise zzgl. Versandkosten:
-      </p>
-      <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: 18px;">
-        <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:7px 10px;font-size:0.82rem;color:rgba(255,255,255,0.85);">10 m · 10,00 €</span>
-        <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:7px 10px;font-size:0.82rem;color:rgba(255,255,255,0.85);">15 m · 15,00 €</span>
-        <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:7px 10px;font-size:0.82rem;color:rgba(255,255,255,0.85);">20 m · 20,00 €</span>
-        <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:7px 10px;font-size:0.82rem;color:rgba(255,255,255,0.85);">25 m · 25,00 €</span>
-        <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:7px 10px;font-size:0.82rem;color:rgba(255,255,255,0.85);">30 m · 30,00 €</span>
-        <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:7px 10px;font-size:0.82rem;color:rgba(255,255,255,0.85);">35 m · 35,00 €</span>
-      </div>
-      <div class="seile-tags">
-        <span class="seile-tag">Beratung</span>
-        <span class="seile-tag">Coaching</span>
-        <span class="seile-tag">Supervision</span>
-        <span class="seile-tag">Therapie</span>
-        <span class="seile-tag">Systemische Arbeit</span>
-      </div>
-    </div>
-    <div class="seile-img">
-      <img src="images/20211018_142822_Postkarte.jpg" alt="Strukturseile für Beratung, Coaching und Supervision" />
-    </div>
-  </div>
-</section>
-
-<!-- wave: navy → white (treppe) -->
-<div class="wave wave-up" style="background:var(--white);">
-  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C480,44 1080,0 1440,32 L1440,0 L0,0 Z" fill="#140d69"/>
-  </svg>
-</div>
-
-<!-- TREPPE -->
-<section style="padding: 80px 5%; background: var(--white);">
-  <div class="section-inner">
-    <div class="treppe-grid">
-      <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 6px 28px rgba(26,26,110,0.13);">
-        <img src="images/ABB-33-Figuren_02.JPG" alt="Skalierungstreppe – kleines Stellwerk" style="width: 100%; display: block;" />
-      </div>
-      <div>
-        <div class="section-tag">Erweiterung</div>
-        <h2 class="section-title">Skalierungstreppe – Intensität sichtbar machen.</h2>
-        <p style="font-size: 0.93rem; color: #555; line-height: 1.72; margin-bottom: 12px;">
-          Die Skalierungstreppe besteht aus <strong>10 magnetisch verbundenen Teilen</strong>
-          und wurde speziell für die Verwendung mit den Aufstellungsfiguren des Kleinen Stellwerks
-          entwickelt. Sie macht Intensitäten, Bewertungen und Entwicklungsverläufe
-          direkt im Aufstellungsraum sichtbar.
-        </p>
-        <p style="font-size: 0.93rem; color: #555; line-height: 1.72; margin-bottom: 20px;">
-          Dank der Magnetverbindungen lassen sich die Stufen einfach auseinanderklappen
-          oder platzsparend zusammenfalten – im zusammengefalteten Zustand nur
-          <strong>13 × 9 × 2,5 cm</strong>. Handgefertigt in den
-          Gemeinnützigen Werkstätten Oldenburg (GWO e.V.).
-        </p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
-          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">10 Magnetteile</span>
-          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Faltbar (13×9×2,5 cm)</span>
-          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Handgefertigt · GWO Oldenburg</span>
-          <span style="background: var(--gray-1); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 5px 13px; border-radius: 20px;">Kompatibel mit Kleines Stellwerk</span>
-        </div>
       </div>
     </div>
   </div>
@@ -1341,85 +1491,58 @@
 <!-- BUNDLES -->
 <section id="bundles" style="padding: 80px 5%; background: var(--white);">
   <div class="section-inner">
-    <div class="section-tag">Angebote</div>
-    <h2 class="section-title">Das passende Set für deinen Kontext.</h2>
+    <div class="section-tag">Dein Paket</div>
+    <h2 class="section-title">Selbst zusammenstellen.</h2>
     <p class="section-sub">
-      Alle Bundles inkl. bedruckter Baumwolltasche und sicherem Versandkarton.
+      Einzeln oder im Bundle. Wähle die Produkte, die du brauchst – der Preis passt sich automatisch an.
+      <br><strong>Bundle-Rabatt:</strong> 2 Teile −9 € · 3 Teile −28 €
     </p>
 
-    <div class="price-toggle-wrap">
-      <span class="price-toggle-label">Preise anzeigen:</span>
-      <div class="price-toggle">
-        <button class="active" id="btn-brutto" onclick="setPriceMode('brutto')">inkl. MwSt.</button>
-        <button id="btn-netto" onclick="setPriceMode('netto')">zzgl. MwSt.</button>
+    <div class="bundle-config">
+      <div class="bundle-config-items">
+
+        <div class="bundle-config-item" data-product="figuren" data-price="79" data-name="Kleines Stellwerk (Figurenset)" onclick="toggleConfigItem(this)">
+          <div class="bundle-config-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="bundle-config-name">Figurenset</div>
+          <h4>Kleines Stellwerk</h4>
+          <div class="bundle-config-price">79 €</div>
+        </div>
+
+        <div class="bundle-config-item" data-product="treppe" data-price="49" data-name="Skalierungstreppe" onclick="toggleConfigItem(this)">
+          <div class="bundle-config-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="bundle-config-name">Erweiterung</div>
+          <h4>Skalierungstreppe</h4>
+          <div class="bundle-config-price">49 €</div>
+        </div>
+
+        <div class="bundle-config-item" data-product="brett" data-price="119" data-name="Systembrett" onclick="toggleConfigItem(this)">
+          <div class="bundle-config-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="bundle-config-name">Das Brett</div>
+          <h4>Systembrett</h4>
+          <div class="bundle-config-price">119 €</div>
+        </div>
+
+      </div>
+
+      <div class="bundle-config-summary">
+        <div class="bundle-config-summary-left">
+          <span class="bundle-config-summary-label" id="config-label">Bitte Produkte auswählen</span>
+          <span class="bundle-config-summary-total" id="config-total">0 €</span>
+          <span class="bundle-config-summary-discount" id="config-discount"></span>
+        </div>
+        <button type="button" class="bundle-config-cta" id="config-cta" onclick="submitConfig()" disabled>Jetzt bestellen</button>
       </div>
     </div>
 
-    <div class="bundles-grid">
-
-      <div class="bundle-card">
-        <div class="bundle-name">Einstieg</div>
-        <h3>Board only</h3>
-        <p class="bundle-desc">Das Systembrett als solitäres Arbeitsmittel –
-          kompatibel zu deinen vorhandenen Figuren.</p>
-        <div class="bundle-price">
-          <span class="price-brutto">119 € <span class="price-label">inkl. MwSt.</span></span>
-          <span class="price-netto">100,00 € <span class="price-label">zzgl. MwSt.</span></span>
-        </div>
-        <div class="bundle-savings">&nbsp;</div>
-        <ul class="bundle-items">
-          <li>Systembrett Dual Boundary (400×400×15mm)</li>
-          <li>Beidseitig genutet – kantig &amp; rund</li>
-          <li>Perlbeschichtet weiß, Multiplex</li>
-          <li>Baumwolltasche + Versandkarton</li>
-        </ul>
-        <button class="btn-bundle" onclick="selectBundle('Board only – 119 €')">Jetzt bestellen</button>
-      </div>
-
-      <div class="bundle-card featured">
-        <div class="bundle-badge">Beliebteste Wahl</div>
-        <div class="bundle-name">Starter-Set</div>
-        <h3>Systemisches Starter-Set</h3>
-        <p class="bundle-desc">Brett + Figuren für den direkten Einstieg in professionelle Aufstellungsarbeit.</p>
-        <div class="bundle-price">
-          <span class="price-brutto">199 € <span class="price-label">inkl. MwSt.</span></span>
-          <span class="price-netto">167,23 € <span class="price-label">zzgl. MwSt.</span></span>
-        </div>
-        <div class="bundle-savings">Du sparst ca. 80 € gegenüber Einzelkauf</div>
-        <ul class="bundle-items">
-          <li>Systembrett Dual Boundary</li>
-          <li>Figurenset „Kleines Stellwerk"</li>
-          <li>inkl. digitalem Anleitungs-Booklet</li>
-
-          <li>Baumwolltasche + Versandkarton</li>
-        </ul>
-        <button class="btn-bundle primary" onclick="selectBundle('Systemisches Starter-Set – 199 €')">Jetzt bestellen</button>
-      </div>
-
-      <div class="bundle-card">
-        <div class="bundle-name">Professional</div>
-        <h3>Aufstellungs-Set Pro</h3>
-        <p class="bundle-desc">Das vollständige Werkzeugset – für Coaches,
-          Weiterbildner und systemisch Arbeitende mit Anspruch.</p>
-        <div class="bundle-price">
-          <span class="price-brutto">269 € <span class="price-label">inkl. MwSt.</span></span>
-          <span class="price-netto">226,05 € <span class="price-label">zzgl. MwSt.</span></span>
-        </div>
-        <div class="bundle-savings">Vollständiges Ökosystem im Bundle</div>
-        <ul class="bundle-items">
-          <li>Systembrett Dual Boundary</li>
-          <li>Figurenset „Kleines Stellwerk"</li>
-          <li>Strukturseile (10 m inkl. · jeder weitere Meter +1,00 €)
-            <br><span style="font-size:0.78rem;color:#aaa;">Gewünschte Länge (&gt;10 m) bitte in Anmerkungen angeben</span>
-          </li>
-          <li>Skalierungstreppe</li>
-
-          <li>Baumwolltasche + Versandkarton</li>
-        </ul>
-        <button class="btn-bundle" onclick="selectBundle('Aufstellungs-Set Pro – 269 €')">Jetzt bestellen</button>
-      </div>
-
-    </div>
+    <p style="text-align: center; margin-top: 22px; font-size: 0.82rem; color: var(--gray-3);">
+      Alle Preise inkl. MwSt., zzgl. Versandkosten. Inkl. bedruckter Baumwolltasche und Versandkarton.
+    </p>
   </div>
 </section>
 
@@ -1443,13 +1566,11 @@
       <div class="form-grid">
 
         <div class="form-group full">
-          <label for="f-bundle">Bundle *</label>
-          <select id="f-bundle" name="bundle" required>
-            <option value="">– Bitte wählen –</option>
-            <option value="Board only – 119 € inkl. MwSt.">Board only – 119 € inkl. MwSt.</option>
-            <option value="Systemisches Starter-Set – 199 € inkl. MwSt.">Systemisches Starter-Set – 199 € inkl. MwSt.</option>
-            <option value="Aufstellungs-Set Pro – 269 € inkl. MwSt.">Aufstellungs-Set Pro – 269 € inkl. MwSt.</option>
-          </select>
+          <label for="f-bundle">Deine Auswahl *</label>
+          <input type="text" id="f-bundle" name="bundle" readonly required
+                 placeholder="Bitte oben Produkte auswählen"
+                 style="background: var(--off); cursor: pointer;"
+                 onclick="document.getElementById('bundles').scrollIntoView({behavior:'smooth'});" />
         </div>
 
         <div class="form-group">
@@ -1625,50 +1746,83 @@
 </section>
 
 <script>
-  // ── PRICE TOGGLE ─────────────────────────────
-  function setPriceMode(mode) {
-    const bruttos = document.querySelectorAll('.price-brutto');
-    const nettos  = document.querySelectorAll('.price-netto');
-    if (mode === 'netto') {
-      bruttos.forEach(el => el.style.display = 'none');
-      nettos.forEach(el => el.style.display = 'inline');
-      document.getElementById('btn-brutto').classList.remove('active');
-      document.getElementById('btn-netto').classList.add('active');
+  // ── BUNDLE CONFIGURATOR ──────────────────────
+  const BUNDLE_DISCOUNTS = { 1: 0, 2: 9, 3: 28 };
+
+  function toggleConfigItem(el) {
+    el.classList.toggle('selected');
+    updateConfigSummary();
+  }
+
+  function updateConfigSummary() {
+    const selected = document.querySelectorAll('.bundle-config-item.selected');
+    const count = selected.length;
+    let sum = 0;
+    selected.forEach(i => { sum += parseInt(i.dataset.price, 10); });
+
+    const discount = BUNDLE_DISCOUNTS[count] || 0;
+    const total = sum - discount;
+
+    const labelEl    = document.getElementById('config-label');
+    const totalEl    = document.getElementById('config-total');
+    const discountEl = document.getElementById('config-discount');
+    const ctaEl      = document.getElementById('config-cta');
+
+    if (count === 0) {
+      labelEl.textContent    = 'Bitte Produkte auswählen';
+      totalEl.textContent    = '0 €';
+      discountEl.textContent = '';
+      ctaEl.disabled = true;
     } else {
-      bruttos.forEach(el => el.style.display = 'inline');
-      nettos.forEach(el => el.style.display = 'none');
-      document.getElementById('btn-brutto').classList.add('active');
-      document.getElementById('btn-netto').classList.remove('active');
+      labelEl.textContent    = count === 1 ? 'Einzelprodukt' : 'Bundle · ' + count + ' Teile';
+      totalEl.textContent    = total + ' €';
+      discountEl.textContent = discount > 0 ? 'Du sparst ' + discount + ' €' : '';
+      ctaEl.disabled = false;
     }
   }
 
-  // ── BUNDLE SELECT + SCROLL TO FORM ───────────
-  const bundleMap = {
-    'Board only – 119 €':               'Board only – 119 € inkl. MwSt.',
-    'Systemisches Starter-Set – 199 €': 'Systemisches Starter-Set – 199 € inkl. MwSt.',
-    'Aufstellungs-Set Pro – 269 €':     'Aufstellungs-Set Pro – 269 € inkl. MwSt.',
-  };
+  function submitConfig() {
+    const selected = document.querySelectorAll('.bundle-config-item.selected');
+    if (selected.length === 0) return;
 
+    const names = [];
+    let sum = 0;
+    selected.forEach(i => {
+      names.push(i.dataset.name);
+      sum += parseInt(i.dataset.price, 10);
+    });
+    const discount = BUNDLE_DISCOUNTS[selected.length] || 0;
+    const total = sum - discount;
+
+    const list = names.join(' + ');
+    const label = (selected.length === 1)
+      ? list + ' – ' + total + ' € inkl. MwSt.'
+      : 'Bundle (' + selected.length + ' Teile): ' + list + ' – ' + total + ' € inkl. MwSt.';
+
+    selectBundle(label);
+  }
+
+  // ── FORM: AUSWAHL ÜBERNEHMEN ────────────────
   function selectBundle(label) {
-    const select = document.getElementById('f-bundle');
-    const badge  = document.getElementById('selected-badge');
+    const input     = document.getElementById('f-bundle');
+    const badge     = document.getElementById('selected-badge');
     const badgeText = document.getElementById('selected-badge-text');
 
-    select.value = bundleMap[label] || '';
+    input.value = label;
     badgeText.textContent = label + ' vorausgewählt';
     badge.classList.add('visible');
 
     document.getElementById('order-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function toggleLieferadresse(checkbox) {
-    const block = document.getElementById('lieferadresse-block');
-    block.style.display = checkbox.checked ? 'block' : 'none';
-  }
-
   function clearBundle() {
     document.getElementById('f-bundle').value = '';
     document.getElementById('selected-badge').classList.remove('visible');
+  }
+
+  function toggleLieferadresse(checkbox) {
+    const block = document.getElementById('lieferadresse-block');
+    block.style.display = checkbox.checked ? 'block' : 'none';
   }
 </script>
 </body>
