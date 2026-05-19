@@ -152,12 +152,12 @@
     .board-fade-wrap img {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
     .board-fade-wrap .fade-a { animation: cycle-a 9s ease-in-out infinite; }
-    .board-fade-wrap .fade-b { animation: cycle-b 9s ease-in-out infinite; object-fit: contain; }
-    .board-fade-wrap .fade-c { animation: cycle-c 9s ease-in-out infinite; object-fit: contain; }
+    .board-fade-wrap .fade-b { animation: cycle-b 9s ease-in-out infinite; }
+    .board-fade-wrap .fade-c { animation: cycle-c 9s ease-in-out infinite; }
     @keyframes cycle-a {
       0%, 28%   { opacity: 1; }
       33%, 94%  { opacity: 0; }
@@ -989,22 +989,22 @@
     <div>
       <div class="board-label-wrap">
         <div class="board-label label-a">
-          <span>Figurenset</span>
-          <span>Kleines Stellwerk: Aufstellungsfiguren</span>
-        </div>
-        <div class="board-label label-b">
-          <span>Erweiterung</span>
-          <span>Kleines Stellwerk: Skalierungstreppe</span>
-        </div>
-        <div class="board-label label-c">
           <span>Das Brett</span>
           <span>Systembrett · 400 × 400 × 15 mm</span>
         </div>
+        <div class="board-label label-b">
+          <span>Figurenset</span>
+          <span>Kleines Stellwerk: Aufstellungsfiguren</span>
+        </div>
+        <div class="board-label label-c">
+          <span>Erweiterung</span>
+          <span>Kleines Stellwerk: Skalierungstreppe</span>
+        </div>
       </div>
       <div class="board-fade-wrap">
-        <img class="fade-a" src="images/ABB-00_NEU.jpg" alt="Figurenset Kleines Stellwerk" />
-        <img class="fade-b" src="images/20260408_091544.jpg" alt="Skalierungstreppe" />
-        <img class="fade-c" src="images/brett-kantig.png" alt="Systembrett" />
+        <img class="fade-a" src="images/brett-kantig.png" alt="Systembrett" />
+        <img class="fade-b" src="images/ABB-00_NEU.jpg" alt="Figurenset Kleines Stellwerk" />
+        <img class="fade-c" src="images/20260408_091544.jpg" alt="Skalierungstreppe" />
       </div>
     </div>
   </div>
@@ -1030,13 +1030,26 @@
 
       <div class="overview-card">
         <div class="overview-card-img">
+          <img src="images/brett-kantig.png" alt="Systembrett" style="object-fit: contain; background: #fff;">
+        </div>
+        <div class="overview-card-body">
+          <div class="overview-designer">Design · Benjamin Lambeck</div>
+          <h3>Systembrett</h3>
+          <p>Beidseitig nutzbar – kantige und runde Systemgrenze, 400 × 400 × 15 mm, Multiplex perlbeschichtet.</p>
+          <div class="overview-price">119 € <span>inkl. MwSt.</span></div>
+          <a href="#brett" class="overview-link">Mehr erfahren →</a>
+        </div>
+      </div>
+
+      <div class="overview-card">
+        <div class="overview-card-img">
           <img src="images/ABB-00_NEU.jpg" alt="Kleines Stellwerk – Figurenset">
         </div>
         <div class="overview-card-body">
           <div class="overview-designer">Design · Prof. Dr. Holger Lindemann</div>
           <h3>Kleines Stellwerk:<br>Aufstellungsfiguren</h3>
           <p>Figurenset für systemische Aufstellungsarbeit – Figuren in drei Größen, Würfel, Balken und Schnüre.</p>
-          <div class="overview-price">159 € <span>inkl. MwSt.</span></div>
+          <div class="overview-price">99 € <span>inkl. MwSt.</span></div>
           <a href="#figurenset" class="overview-link">Mehr erfahren →</a>
         </div>
       </div>
@@ -1049,117 +1062,16 @@
           <div class="overview-designer">Design · Prof. Dr. Holger Lindemann</div>
           <h3>Kleines Stellwerk:<br>Skalierungstreppe</h3>
           <p>10 magnetische Teile für Intensitäten, Bewertungen und Entwicklungsverläufe – faltbar und handgefertigt.</p>
-          <div class="overview-price">89 € <span>inkl. MwSt.</span></div>
+          <div class="overview-price">55 € <span>inkl. MwSt.</span></div>
           <a href="#treppe" class="overview-link">Mehr erfahren →</a>
         </div>
       </div>
 
-      <div class="overview-card">
-        <div class="overview-card-img">
-          <img src="images/brett-kantig.png" alt="Systembrett" style="object-fit: contain; background: #fff;">
-        </div>
-        <div class="overview-card-body">
-          <div class="overview-designer">Design · Benjamin Lambeck</div>
-          <h3>Systembrett</h3>
-          <p>Beidseitig nutzbar – kantige und runde Systemgrenze, 400 × 400 × 15 mm, Multiplex perlbeschichtet.</p>
-          <div class="overview-price">119 € <span>inkl. MwSt.</span></div>
-          <a href="#brett" class="overview-link">Mehr erfahren →</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- STELLWERK -->
-<section id="figurenset" class="stellwerk" style="padding: 80px 5%;">
-  <div class="stellwerk-inner">
-    <div class="stellwerk-img">
-      <img src="images/ABB-00_NEU.jpg" alt="Kleines Stellwerk – Figurenset von Prof. Dr. Holger Lindemann" />
-    </div>
-    <div class="stellwerk-text">
-      <div class="section-tag">Das Figurenset</div>
-      <h2>Kleines Stellwerk: Aufstellungsfiguren.</h2>
-      <div class="author-badge">
-        <div class="author-avatar">HL</div>
-        <div>
-          <h4>Prof. Dr. Holger Lindemann</h4>
-          <p>Autor, Systemischer Berater &amp; Designer des Figurensets</p>
-        </div>
-      </div>
-      <p>
-        Das „Kleine Stellwerk" ist ein durchdachtes Figurenset für die systemische
-        Aufstellungsarbeit – entwickelt von <strong>Prof. Dr. Holger Lindemann</strong>,
-        Autor zahlreicher Fachbücher zur systemischen Beratung und Aufstellungsarbeit.
-      </p>
-      <p>
-        Die Kombination aus Figuren, Balken, Seilen macht
-        Beziehungen, Rollen und Dynamiken im System sichtbar – methodisch präzise,
-        handwerklich hochwertig.
-      </p>
-      <ul class="stellwerk-items">
-        <li>4 große eckige Figuren</li>
-        <li>4 mittlere eckige Figuren</li>
-        <li>4 kleine eckige Figuren</li>
-        <li>4 große runde Figuren</li>
-        <li>4 mittlere runde Figuren</li>
-        <li>4 kleine runde Figuren</li>
-        <li>10 Würfel</li>
-        <li>6 kurze Balken</li>
-        <li>6 lange Balken</li>
-        <li>8 Schnüre in vier Farben, je 1 m</li>
-        <li>Digitales Anleitungs-Booklet</li>
-        <li>Kompatibel mit dem Systembrett</li>
-      </ul>
-      <div class="booklet-row">
-        <div class="booklet-thumb">
-          <img src="images/stellwerk-booklet.png" alt="Booklet: kleines Stellwerk" />
-        </div>
-        <div class="booklet-info">
-          <strong>Inkl. Anleitungs-Booklet</strong><br>
-          „kleines Stellwerk – Aufstellungsfiguren &amp; Skalierungstreppe"<br>
-          von Prof. Dr. Holger Lindemann<br>
-          <span style="color:var(--gray-3);">Vandenhoeck &amp; Ruprecht (V&amp;R)</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TREPPE -->
-<section id="treppe" style="padding: 80px 5%; background: var(--white);">
-  <div class="section-inner">
-    <div class="treppe-grid">
-      <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 6px 28px rgba(26,26,110,0.13);">
-        <img src="images/ABB-33-Figuren_02.JPG" alt="Skalierungstreppe – kleines Stellwerk" style="width: 100%; display: block;" />
-      </div>
-      <div>
-        <div class="section-tag">Erweiterung</div>
-        <h2 class="section-title">Kleines Stellwerk: Skalierungstreppe.</h2>
-        <p style="font-size: 0.93rem; color: var(--navy); line-height: 1.72; margin-bottom: 12px;">
-          Die Skalierungstreppe besteht aus <strong>10 magnetisch verbundenen Teilen</strong>
-          und wurde speziell für die Verwendung mit den Aufstellungsfiguren des Kleinen Stellwerks
-          entwickelt. Sie macht Intensitäten, Bewertungen und Entwicklungsverläufe
-          direkt im Aufstellungsraum sichtbar.
-        </p>
-        <p style="font-size: 0.93rem; color: var(--navy); line-height: 1.72; margin-bottom: 20px;">
-          Dank der Magnetverbindungen lassen sich die Stufen einfach auseinanderklappen
-          oder platzsparend zusammenfalten – im zusammengefalteten Zustand nur
-          <strong>13 × 9 × 2,5 cm</strong>. Handgefertigt in den
-          Gemeinnützigen Werkstätten Oldenburg (GWO e.V.).
-        </p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
-          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">10 Magnetteile</span>
-          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Faltbar (13×9×2,5 cm)</span>
-          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Handgefertigt · GWO Oldenburg</span>
-          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Kompatibel mit Kleines Stellwerk</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- wave: treppe (white) → brett (navy) -->
+<!-- wave: overview (white) → brett (navy) -->
 <div class="wave wave-down" style="background:var(--white);">
   <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,0 C480,44 960,0 1440,32 L1440,44 L0,44 Z" fill="#140d69"/>
@@ -1296,6 +1208,94 @@
         <h4>Teil eines Ökosystems</h4>
         <p>Figuren, Skalierungstreppe und coachingspace –
           alles greift methodisch ineinander.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STELLWERK -->
+<section id="figurenset" class="stellwerk" style="padding: 80px 5%;">
+  <div class="stellwerk-inner">
+    <div class="stellwerk-img">
+      <img src="images/ABB-00_NEU.jpg" alt="Kleines Stellwerk – Figurenset von Prof. Dr. Holger Lindemann" />
+    </div>
+    <div class="stellwerk-text">
+      <div class="section-tag">Das Figurenset</div>
+      <h2>Kleines Stellwerk: Aufstellungsfiguren.</h2>
+      <div class="author-badge">
+        <div class="author-avatar">HL</div>
+        <div>
+          <h4>Prof. Dr. Holger Lindemann</h4>
+          <p>Autor, Systemischer Berater &amp; Designer des Figurensets</p>
+        </div>
+      </div>
+      <p>
+        Das „Kleine Stellwerk" ist ein durchdachtes Figurenset für die systemische
+        Aufstellungsarbeit – entwickelt von <strong>Prof. Dr. Holger Lindemann</strong>,
+        Autor zahlreicher Fachbücher zur systemischen Beratung und Aufstellungsarbeit.
+      </p>
+      <p>
+        Die Kombination aus Figuren, Balken, Seilen macht
+        Beziehungen, Rollen und Dynamiken im System sichtbar – methodisch präzise,
+        handwerklich hochwertig.
+      </p>
+      <ul class="stellwerk-items">
+        <li>4 große eckige Figuren</li>
+        <li>4 mittlere eckige Figuren</li>
+        <li>4 kleine eckige Figuren</li>
+        <li>4 große runde Figuren</li>
+        <li>4 mittlere runde Figuren</li>
+        <li>4 kleine runde Figuren</li>
+        <li>10 Würfel</li>
+        <li>6 kurze Balken</li>
+        <li>6 lange Balken</li>
+        <li>8 Schnüre in vier Farben, je 1 m</li>
+        <li>Digitales Anleitungs-Booklet</li>
+        <li>Kompatibel mit dem Systembrett</li>
+      </ul>
+      <div class="booklet-row">
+        <div class="booklet-thumb">
+          <img src="images/stellwerk-booklet.png" alt="Booklet: kleines Stellwerk" />
+        </div>
+        <div class="booklet-info">
+          <strong>Inkl. Anleitungs-Booklet</strong><br>
+          „kleines Stellwerk – Aufstellungsfiguren &amp; Skalierungstreppe"<br>
+          von Prof. Dr. Holger Lindemann<br>
+          <span style="color:var(--gray-3);">Vandenhoeck &amp; Ruprecht (V&amp;R)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREPPE -->
+<section id="treppe" style="padding: 80px 5%; background: var(--white);">
+  <div class="section-inner">
+    <div class="treppe-grid">
+      <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 6px 28px rgba(26,26,110,0.13);">
+        <img src="images/ABB-33-Figuren_02.JPG" alt="Skalierungstreppe – kleines Stellwerk" style="width: 100%; display: block;" />
+      </div>
+      <div>
+        <div class="section-tag">Erweiterung</div>
+        <h2 class="section-title">Kleines Stellwerk: Skalierungstreppe.</h2>
+        <p style="font-size: 0.93rem; color: var(--navy); line-height: 1.72; margin-bottom: 12px;">
+          Die Skalierungstreppe besteht aus <strong>10 magnetisch verbundenen Teilen</strong>
+          und wurde speziell für die Verwendung mit den Aufstellungsfiguren des Kleinen Stellwerks
+          entwickelt. Sie macht Intensitäten, Bewertungen und Entwicklungsverläufe
+          direkt im Aufstellungsraum sichtbar.
+        </p>
+        <p style="font-size: 0.93rem; color: var(--navy); line-height: 1.72; margin-bottom: 20px;">
+          Dank der Magnetverbindungen lassen sich die Stufen einfach auseinanderklappen
+          oder platzsparend zusammenfalten – im zusammengefalteten Zustand nur
+          <strong>13 × 9 × 2,5 cm</strong>. Handgefertigt in den
+          Gemeinnützigen Werkstätten Oldenburg (GWO e.V.).
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;">
+          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">10 Magnetteile</span>
+          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Faltbar (13×9×2,5 cm)</span>
+          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Handgefertigt · GWO Oldenburg</span>
+          <span style="background: var(--white); border: 1px solid var(--gray-2); color: var(--navy); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px;">Kompatibel mit Kleines Stellwerk</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1503,30 +1503,12 @@
     <div class="section-tag">Dein Paket</div>
     <h2 class="section-title">Selbst zusammenstellen.</h2>
     <p class="section-sub">
-      Einzeln oder im Bundle. Mit dem Systembrett im Set sicherst du dir den Bundle-Rabatt –
-      <strong>bis zu 34 € beim Komplettpaket</strong>, Versand nur einmal.
+      Einzeln oder im Bundle. Jede Kombination spart – additiv, bis zu
+      <strong>−26 € beim Komplettpaket</strong>. Versand nur einmal.
     </p>
 
     <div class="bundle-config">
       <div class="bundle-config-items">
-
-        <div class="bundle-config-item" data-product="figuren" data-price="159" data-name="Kleines Stellwerk: Aufstellungsfiguren" onclick="toggleConfigItem(this)">
-          <div class="bundle-config-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </div>
-          <div class="bundle-config-name">Figurenset</div>
-          <h4>Kleines Stellwerk:<br>Aufstellungsfiguren</h4>
-          <div class="bundle-config-price">159 €</div>
-        </div>
-
-        <div class="bundle-config-item" data-product="treppe" data-price="89" data-name="Kleines Stellwerk: Skalierungstreppe" onclick="toggleConfigItem(this)">
-          <div class="bundle-config-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </div>
-          <div class="bundle-config-name">Erweiterung</div>
-          <h4>Kleines Stellwerk:<br>Skalierungstreppe</h4>
-          <div class="bundle-config-price">89 €</div>
-        </div>
 
         <div class="bundle-config-item" data-product="brett" data-price="119" data-name="Systembrett" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
@@ -1535,6 +1517,24 @@
           <div class="bundle-config-name">Das Brett</div>
           <h4>Systembrett</h4>
           <div class="bundle-config-price">119 €</div>
+        </div>
+
+        <div class="bundle-config-item" data-product="figuren" data-price="99" data-name="Kleines Stellwerk: Aufstellungsfiguren" onclick="toggleConfigItem(this)">
+          <div class="bundle-config-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="bundle-config-name">Figurenset</div>
+          <h4>Kleines Stellwerk:<br>Aufstellungsfiguren</h4>
+          <div class="bundle-config-price">99 €</div>
+        </div>
+
+        <div class="bundle-config-item" data-product="treppe" data-price="55" data-name="Kleines Stellwerk: Skalierungstreppe" onclick="toggleConfigItem(this)">
+          <div class="bundle-config-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="bundle-config-name">Erweiterung</div>
+          <h4>Kleines Stellwerk:<br>Skalierungstreppe</h4>
+          <div class="bundle-config-price">55 €</div>
         </div>
 
       </div>
@@ -1756,15 +1756,18 @@
 
 <script>
   // ── BUNDLE CONFIGURATOR ──────────────────────
-  // Bundle-Rabatt gibt es nur, wenn das Systembrett mit im Set ist.
-  // Die Rabatte sind additiv und halten jede Marge bei >= 55 %.
-  const BUNDLE_RABATT = { figuren: 20, treppe: 14 };
+  // Rabatt für jede Bundle-Kombination (additiv). Das Brett bleibt voll
+  // bepreist; Figuren und Treppe bringen den Rabatt mit. Bei allen drei
+  // Produkten kommt ein Komplettpaket-Bonus dazu.
+  const BUNDLE_RABATT  = { figuren: 10, treppe: 6 };
+  const KOMPLETT_BONUS = 10;
 
   function bundleDiscount(keys) {
-    if (!keys.includes('brett')) return 0;
+    if (keys.length < 2) return 0;
     let d = 0;
     if (keys.includes('figuren')) d += BUNDLE_RABATT.figuren;
     if (keys.includes('treppe'))  d += BUNDLE_RABATT.treppe;
+    if (keys.length === 3) d += KOMPLETT_BONUS;
     return d;
   }
 
@@ -1805,18 +1808,9 @@
                         : (count === 3) ? 'Komplettpaket'
                         : 'Set · ' + count + ' Teile';
 
-    if (discount > 0) {
-      discountEl.textContent = 'Du sparst ' + discount + ' € · Versand nur einmal';
-    } else if (!keys.includes('brett')) {
-      let potential = 0;
-      if (keys.includes('figuren')) potential += BUNDLE_RABATT.figuren;
-      if (keys.includes('treppe'))  potential += BUNDLE_RABATT.treppe;
-      discountEl.textContent = potential > 0
-        ? '+ Systembrett wählen und ' + potential + ' € sparen'
-        : '';
-    } else {
-      discountEl.textContent = '';
-    }
+    discountEl.textContent = discount > 0
+      ? 'Du sparst ' + discount + ' € · Versand nur einmal'
+      : '';
   }
 
   function submitConfig() {
