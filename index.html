@@ -1755,6 +1755,32 @@
 </section>
 
 <script>
+  // ── STRIPE-ZAHLUNGSLINKS ─────────────────────
+  // Vorbereitet für Stripe. Sobald dein Stripe-Konto steht:
+  //   1. Stripe-Dashboard → "Zahlungslinks" → 7 Links anlegen
+  //      (genaue Preise siehe Kommentar je Zeile).
+  //   2. Im jeweiligen Link Versandkosten als Versandoption + Lieferland
+  //      hinterlegen; Beleg/Rechnung automatisch senden aktivieren.
+  //   3. Die fertige Link-URL hier zwischen die Anführungszeichen setzen.
+  // Solange ein Feld leer ('') ist, nutzt der Bestell-Button automatisch
+  // das Anfrage-/Rechnungs-Formular als Fallback — die Seite bleibt also
+  // jederzeit funktionsfähig. WICHTIG: Links erst eintragen, wenn AGB +
+  // Widerrufsbelehrung online sind (echter Direktkauf = Fernabsatzrecht).
+  const STRIPE_LINKS = {
+    'brett':                '',  // Systembrett – 119 €
+    'figuren':              '',  // Kleines Stellwerk: Aufstellungsfiguren – 99 €
+    'treppe':               '',  // Kleines Stellwerk: Skalierungstreppe – 55 €
+    'brett+figuren':        '',  // Brett + Figuren – 208 €
+    'brett+treppe':         '',  // Brett + Treppe – 168 €
+    'figuren+treppe':       '',  // Figuren + Treppe – 138 €
+    'brett+figuren+treppe': ''   // Komplettpaket – 247 €
+  };
+
+  function stripeLinkFor(keys) {
+    const k = ['brett', 'figuren', 'treppe'].filter(p => keys.includes(p)).join('+');
+    return STRIPE_LINKS[k] || '';
+  }
+
   // ── BUNDLE CONFIGURATOR ──────────────────────
   // Rabatt für jede Bundle-Kombination (additiv). Das Brett bleibt voll
   // bepreist; Figuren und Treppe bringen den Rabatt mit. Bei allen drei
@@ -1827,6 +1853,14 @@
     });
     const discount = bundleDiscount(keys);
     const total = sum - discount;
+
+    // Stripe: wenn für diese Kombination ein Zahlungslink hinterlegt ist,
+    // direkt zur Bezahlung. Sonst Fallback auf das Anfrage-/Rechnungsformular.
+    const stripeUrl = stripeLinkFor(keys);
+    if (stripeUrl) {
+      window.location.href = stripeUrl;
+      return;
+    }
 
     const list = names.join(' + ');
     const label = (selected.length === 1)
