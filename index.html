@@ -1036,7 +1036,7 @@
           <div class="overview-designer">Design · Prof. Dr. Holger Lindemann</div>
           <h3>Kleines Stellwerk:<br>Aufstellungsfiguren</h3>
           <p>Figurenset für systemische Aufstellungsarbeit – Figuren in drei Größen, Würfel, Balken und Schnüre.</p>
-          <div class="overview-price">79 € <span>inkl. MwSt.</span></div>
+          <div class="overview-price">159 € <span>inkl. MwSt.</span></div>
           <a href="#figurenset" class="overview-link">Mehr erfahren →</a>
         </div>
       </div>
@@ -1049,7 +1049,7 @@
           <div class="overview-designer">Design · Prof. Dr. Holger Lindemann</div>
           <h3>Kleines Stellwerk:<br>Skalierungstreppe</h3>
           <p>10 magnetische Teile für Intensitäten, Bewertungen und Entwicklungsverläufe – faltbar und handgefertigt.</p>
-          <div class="overview-price">49 € <span>inkl. MwSt.</span></div>
+          <div class="overview-price">89 € <span>inkl. MwSt.</span></div>
           <a href="#treppe" class="overview-link">Mehr erfahren →</a>
         </div>
       </div>
@@ -1503,29 +1503,29 @@
     <div class="section-tag">Dein Paket</div>
     <h2 class="section-title">Selbst zusammenstellen.</h2>
     <p class="section-sub">
-      Einzeln oder im Bundle. Wähle die Produkte, die du brauchst – der Preis passt sich automatisch an.
-      <br><strong>Komplettpaket:</strong> Alle drei Produkte für nur <strong>199 €</strong> (−48 € sparen).
+      Einzeln oder im Bundle. Mit dem Systembrett im Set sicherst du dir den Bundle-Rabatt –
+      <strong>bis zu 34 € beim Komplettpaket</strong>, Versand nur einmal.
     </p>
 
     <div class="bundle-config">
       <div class="bundle-config-items">
 
-        <div class="bundle-config-item" data-product="figuren" data-price="79" data-name="Kleines Stellwerk: Aufstellungsfiguren" onclick="toggleConfigItem(this)">
+        <div class="bundle-config-item" data-product="figuren" data-price="159" data-name="Kleines Stellwerk: Aufstellungsfiguren" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <div class="bundle-config-name">Figurenset</div>
           <h4>Kleines Stellwerk:<br>Aufstellungsfiguren</h4>
-          <div class="bundle-config-price">79 €</div>
+          <div class="bundle-config-price">159 €</div>
         </div>
 
-        <div class="bundle-config-item" data-product="treppe" data-price="49" data-name="Kleines Stellwerk: Skalierungstreppe" onclick="toggleConfigItem(this)">
+        <div class="bundle-config-item" data-product="treppe" data-price="89" data-name="Kleines Stellwerk: Skalierungstreppe" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <div class="bundle-config-name">Erweiterung</div>
           <h4>Kleines Stellwerk:<br>Skalierungstreppe</h4>
-          <div class="bundle-config-price">49 €</div>
+          <div class="bundle-config-price">89 €</div>
         </div>
 
         <div class="bundle-config-item" data-product="brett" data-price="119" data-name="Systembrett" onclick="toggleConfigItem(this)">
@@ -1756,12 +1756,16 @@
 
 <script>
   // ── BUNDLE CONFIGURATOR ──────────────────────
-  function getBundleDiscount(keys) {
-    if (keys.length === 3) return 48;
-    if (keys.length === 2) {
-      return keys.includes('brett') ? 19 : 9;
-    }
-    return 0;
+  // Bundle-Rabatt gibt es nur, wenn das Systembrett mit im Set ist.
+  // Die Rabatte sind additiv und halten jede Marge bei >= 55 %.
+  const BUNDLE_RABATT = { figuren: 20, treppe: 14 };
+
+  function bundleDiscount(keys) {
+    if (!keys.includes('brett')) return 0;
+    let d = 0;
+    if (keys.includes('figuren')) d += BUNDLE_RABATT.figuren;
+    if (keys.includes('treppe'))  d += BUNDLE_RABATT.treppe;
+    return d;
   }
 
   function toggleConfigItem(el) {
@@ -1779,7 +1783,7 @@
       sum += parseInt(i.dataset.price, 10);
     });
 
-    const discount = getBundleDiscount(keys);
+    const discount = bundleDiscount(keys);
     const total = sum - discount;
 
     const labelEl    = document.getElementById('config-label');
@@ -1792,11 +1796,26 @@
       totalEl.textContent    = '0 €';
       discountEl.textContent = '';
       ctaEl.disabled = true;
+      return;
+    }
+
+    ctaEl.disabled = false;
+    totalEl.textContent = total + ' €';
+    labelEl.textContent = (count === 1) ? 'Einzelprodukt'
+                        : (count === 3) ? 'Komplettpaket'
+                        : 'Set · ' + count + ' Teile';
+
+    if (discount > 0) {
+      discountEl.textContent = 'Du sparst ' + discount + ' € · Versand nur einmal';
+    } else if (!keys.includes('brett')) {
+      let potential = 0;
+      if (keys.includes('figuren')) potential += BUNDLE_RABATT.figuren;
+      if (keys.includes('treppe'))  potential += BUNDLE_RABATT.treppe;
+      discountEl.textContent = potential > 0
+        ? '+ Systembrett wählen und ' + potential + ' € sparen'
+        : '';
     } else {
-      labelEl.textContent    = count === 1 ? 'Einzelprodukt' : 'Bundle · ' + count + ' Teile';
-      totalEl.textContent    = total + ' €';
-      discountEl.textContent = discount > 0 ? 'Du sparst ' + discount + ' €' : '';
-      ctaEl.disabled = false;
+      discountEl.textContent = '';
     }
   }
 
@@ -1812,13 +1831,14 @@
       keys.push(i.dataset.product);
       sum += parseInt(i.dataset.price, 10);
     });
-    const discount = getBundleDiscount(keys);
+    const discount = bundleDiscount(keys);
     const total = sum - discount;
 
     const list = names.join(' + ');
     const label = (selected.length === 1)
       ? list + ' – ' + total + ' € inkl. MwSt.'
-      : 'Bundle (' + selected.length + ' Teile): ' + list + ' – ' + total + ' € inkl. MwSt.';
+      : 'Set (' + selected.length + ' Teile): ' + list + ' – ' + total + ' € inkl. MwSt.'
+        + (discount > 0 ? ' (inkl. ' + discount + ' € Bundle-Rabatt)' : '');
 
     selectBundle(label);
   }
