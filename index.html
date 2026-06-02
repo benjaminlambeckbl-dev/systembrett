@@ -1036,7 +1036,7 @@
           <div class="overview-designer">Design · Benjamin Lambeck</div>
           <h3>Systembrett</h3>
           <p>Beidseitig nutzbar – kantige und runde Systemgrenze, 400 × 400 × 15 mm, Multiplex perlbeschichtet.</p>
-          <div class="overview-price">119 € <span>inkl. MwSt.</span></div>
+          <div class="overview-price"><span class="js-price" data-brutto="109">109 €</span> <span class="js-tax">inkl. MwSt.</span></div>
           <a href="#brett" class="overview-link">Mehr erfahren →</a>
         </div>
       </div>
@@ -1049,7 +1049,7 @@
           <div class="overview-designer">Design · Prof. Dr. Holger Lindemann</div>
           <h3>Kleines Stellwerk:<br>Aufstellungsfiguren</h3>
           <p>Figurenset für systemische Aufstellungsarbeit – Figuren in drei Größen, Würfel, Balken und Schnüre.</p>
-          <div class="overview-price">99 € <span>inkl. MwSt.</span></div>
+          <div class="overview-price"><span class="js-price" data-brutto="89">89 €</span> <span class="js-tax">inkl. MwSt.</span></div>
           <a href="#figurenset" class="overview-link">Mehr erfahren →</a>
         </div>
       </div>
@@ -1062,7 +1062,7 @@
           <div class="overview-designer">Design · Prof. Dr. Holger Lindemann</div>
           <h3>Kleines Stellwerk:<br>Skalierungstreppe</h3>
           <p>10 magnetische Teile für Intensitäten, Bewertungen und Entwicklungsverläufe – faltbar und handgefertigt.</p>
-          <div class="overview-price">55 € <span>inkl. MwSt.</span></div>
+          <div class="overview-price"><span class="js-price" data-brutto="49">49 €</span> <span class="js-tax">inkl. MwSt.</span></div>
           <a href="#treppe" class="overview-link">Mehr erfahren →</a>
         </div>
       </div>
@@ -1504,37 +1504,45 @@
     <h2 class="section-title">Selbst zusammenstellen.</h2>
     <p class="section-sub">
       Einzeln oder im Bundle. Jede Kombination spart – additiv, bis zu
-      <strong>−26 € beim Komplettpaket</strong>. Versand nur einmal.
+      <strong>−48 € beim Komplettpaket</strong>. Versand immer pauschal 9 €.
     </p>
+
+    <div class="price-toggle-wrap">
+      <span class="price-toggle-label">Preisangabe:</span>
+      <div class="price-toggle">
+        <button type="button" class="active" onclick="setPriceMode('brutto', this)">Brutto</button>
+        <button type="button" onclick="setPriceMode('netto', this)">Netto</button>
+      </div>
+    </div>
 
     <div class="bundle-config">
       <div class="bundle-config-items">
 
-        <div class="bundle-config-item" data-product="brett" data-price="119" data-name="Systembrett" onclick="toggleConfigItem(this)">
+        <div class="bundle-config-item" data-product="brett" data-price="109" data-name="Systembrett" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <div class="bundle-config-name">Das Brett</div>
           <h4>Systembrett</h4>
-          <div class="bundle-config-price">119 €</div>
+          <div class="bundle-config-price js-price" data-brutto="109">109 €</div>
         </div>
 
-        <div class="bundle-config-item" data-product="figuren" data-price="99" data-name="Kleines Stellwerk: Aufstellungsfiguren" onclick="toggleConfigItem(this)">
+        <div class="bundle-config-item" data-product="figuren" data-price="89" data-name="Kleines Stellwerk: Aufstellungsfiguren" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <div class="bundle-config-name">Figurenset</div>
           <h4>Kleines Stellwerk:<br>Aufstellungsfiguren</h4>
-          <div class="bundle-config-price">99 €</div>
+          <div class="bundle-config-price js-price" data-brutto="89">89 €</div>
         </div>
 
-        <div class="bundle-config-item" data-product="treppe" data-price="55" data-name="Kleines Stellwerk: Skalierungstreppe" onclick="toggleConfigItem(this)">
+        <div class="bundle-config-item" data-product="treppe" data-price="49" data-name="Kleines Stellwerk: Skalierungstreppe" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <div class="bundle-config-name">Erweiterung</div>
           <h4>Kleines Stellwerk:<br>Skalierungstreppe</h4>
-          <div class="bundle-config-price">55 €</div>
+          <div class="bundle-config-price js-price" data-brutto="49">49 €</div>
         </div>
 
       </div>
@@ -1550,7 +1558,8 @@
     </div>
 
     <p style="text-align: center; margin-top: 22px; font-size: 0.82rem; color: var(--gray-3);">
-      Alle Preise inkl. MwSt., zzgl. Versandkosten. Inkl. bedruckter Baumwolltasche und Versandkarton.
+      Alle Preise <span class="js-tax">inkl. MwSt.</span> · Versand pauschal <strong>9 €</strong> pro Bestellung –
+      egal ob einzeln oder Komplettpaket · inkl. bedruckter Baumwolltasche und Versandkarton.
     </p>
   </div>
 </section>
@@ -1767,13 +1776,13 @@
   // jederzeit funktionsfähig. WICHTIG: Links erst eintragen, wenn AGB +
   // Widerrufsbelehrung online sind (echter Direktkauf = Fernabsatzrecht).
   const STRIPE_LINKS = {
-    'brett':                '',  // Systembrett – 119 €
-    'figuren':              '',  // Kleines Stellwerk: Aufstellungsfiguren – 99 €
-    'treppe':               '',  // Kleines Stellwerk: Skalierungstreppe – 55 €
-    'brett+figuren':        '',  // Brett + Figuren – 208 €
-    'brett+treppe':         '',  // Brett + Treppe – 168 €
-    'figuren+treppe':       '',  // Figuren + Treppe – 138 €
-    'brett+figuren+treppe': ''   // Komplettpaket – 247 €
+    'brett':                '',  // Systembrett – 109 €
+    'figuren':              '',  // Kleines Stellwerk: Aufstellungsfiguren – 89 €
+    'treppe':               '',  // Kleines Stellwerk: Skalierungstreppe – 49 €
+    'brett+figuren':        '',  // Brett + Figuren – 179 €
+    'brett+treppe':         '',  // Brett + Treppe – 149 €
+    'figuren+treppe':       '',  // Figuren + Treppe – 110 €
+    'brett+figuren+treppe': ''   // Komplettpaket – 199 €
   };
 
   function stripeLinkFor(keys) {
@@ -1785,8 +1794,41 @@
   // Rabatt für jede Bundle-Kombination (additiv). Das Brett bleibt voll
   // bepreist; Figuren und Treppe bringen den Rabatt mit. Bei allen drei
   // Produkten kommt ein Komplettpaket-Bonus dazu.
-  const BUNDLE_RABATT  = { figuren: 10, treppe: 6 };
-  const KOMPLETT_BONUS = 10;
+  const BUNDLE_RABATT  = { figuren: 19, treppe: 9 };
+  const KOMPLETT_BONUS = 20;
+
+  // ── NETTO / BRUTTO TOGGLE ────────────────────
+  // Alle hinterlegten Preise sind Brutto (inkl. 19 % MwSt.). Netto = Brutto / 1,19.
+  const MWST = 1.19;
+  let priceMode = 'brutto';
+
+  function fmtPrice(brutto) {
+    if (priceMode === 'netto') {
+      return (brutto / MWST).toFixed(2).replace('.', ',') + ' €';
+    }
+    return brutto + ' €';
+  }
+
+  function taxLabel() {
+    return priceMode === 'netto' ? 'zzgl. MwSt.' : 'inkl. MwSt.';
+  }
+
+  function setPriceMode(mode, btn) {
+    priceMode = mode;
+    document.querySelectorAll('.price-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyPriceMode();
+  }
+
+  function applyPriceMode() {
+    document.querySelectorAll('.js-price').forEach(el => {
+      el.textContent = fmtPrice(parseFloat(el.dataset.brutto));
+    });
+    document.querySelectorAll('.js-tax').forEach(el => {
+      el.textContent = taxLabel();
+    });
+    updateConfigSummary();
+  }
 
   function bundleDiscount(keys) {
     if (keys.length < 2) return 0;
@@ -1822,21 +1864,21 @@
 
     if (count === 0) {
       labelEl.textContent    = 'Bitte Produkte auswählen';
-      totalEl.textContent    = '0 €';
+      totalEl.textContent    = fmtPrice(0);
       discountEl.textContent = '';
       ctaEl.disabled = true;
       return;
     }
 
     ctaEl.disabled = false;
-    totalEl.textContent = total + ' €';
+    totalEl.textContent = fmtPrice(total);
     labelEl.textContent = (count === 1) ? 'Einzelprodukt'
                         : (count === 3) ? 'Komplettpaket'
                         : 'Set · ' + count + ' Teile';
 
     discountEl.textContent = discount > 0
-      ? 'Du sparst ' + discount + ' € · Versand nur einmal'
-      : '';
+      ? 'Du sparst ' + fmtPrice(discount) + ' · zzgl. 9 € Versand'
+      : 'zzgl. 9 € Versand';
   }
 
   function submitConfig() {
@@ -1864,9 +1906,9 @@
 
     const list = names.join(' + ');
     const label = (selected.length === 1)
-      ? list + ' – ' + total + ' € inkl. MwSt.'
-      : 'Set (' + selected.length + ' Teile): ' + list + ' – ' + total + ' € inkl. MwSt.'
-        + (discount > 0 ? ' (inkl. ' + discount + ' € Bundle-Rabatt)' : '');
+      ? list + ' – ' + fmtPrice(total) + ' ' + taxLabel() + ' zzgl. 9 € Versand'
+      : 'Set (' + selected.length + ' Teile): ' + list + ' – ' + fmtPrice(total) + ' ' + taxLabel() + ' zzgl. 9 € Versand'
+        + (discount > 0 ? ' (inkl. ' + fmtPrice(discount) + ' Bundle-Rabatt)' : '');
 
     selectBundle(label);
   }
