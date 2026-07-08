@@ -712,26 +712,6 @@
       font-size: 0.97rem; color: var(--navy); line-height: 1.7; margin-bottom: 12px;
     }
 
-    /* ── SPECS ────────────────────────────────── */
-    .specs { background: var(--white); }
-    .specs-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 48px; align-items: start; margin-top: 48px;
-    }
-    .spec-table { width: 100%; border-collapse: collapse; }
-    .spec-table tr { border-bottom: 1px solid var(--gray-1); }
-    .spec-table tr:last-child { border-bottom: none; }
-    .spec-table td { padding: 12px 0; font-size: 0.9rem; }
-    .spec-table td:first-child { color: var(--gray-3); font-weight: 500; width: 42%; }
-    .spec-table td:last-child { color: var(--dark); font-weight: 600; }
-    .spec-box {
-      background: var(--white); border-radius: 10px;
-      padding: 26px; border: 1px solid var(--gray-1);
-      margin-bottom: 16px;
-    }
-    .spec-box h4 { font-size: 0.93rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .spec-box p { font-size: 0.88rem; color: var(--navy); line-height: 1.65; }
-
     /* ── GWO ──────────────────────────────────── */
     .gwo {
       background: var(--white);
@@ -938,7 +918,6 @@
       .showcase-imgs { grid-template-columns: 1fr; }
       .framework-grid { grid-template-columns: repeat(2, 1fr); }
       .bundles-grid { grid-template-columns: repeat(2, 1fr); }
-      .specs-grid { grid-template-columns: 1fr; }
       .treppe-grid { grid-template-columns: 1fr; gap: 32px; }
       .usps-grid { grid-template-columns: repeat(2, 1fr); }
       .trust-badges { gap: 20px; }
@@ -1036,7 +1015,7 @@
           <div class="overview-designer">Design · Benjamin Lambeck</div>
           <h3>Systembrett</h3>
           <p>Beidseitig nutzbar – kantige und runde Systemgrenze, 400 × 400 × 15 mm, Multiplex perlbeschichtet.</p>
-          <div class="overview-price"><span class="js-price" data-brutto="109">109 €</span> <span class="js-tax">inkl. MwSt.</span></div>
+          <div class="overview-price"><span class="js-price" data-brutto="95">95 €</span> <span class="js-tax">inkl. MwSt.</span></div>
           <a href="#brett" class="overview-link">Mehr erfahren →</a>
         </div>
       </div>
@@ -1301,202 +1280,6 @@
   </div>
 </section>
 
-<!-- SPECS -->
-<section class="specs">
-  <div class="section-inner">
-    <div class="section-tag">Technische Details</div>
-    <h2 class="section-title">Gemacht für die Praxis.</h2>
-    <div class="specs-grid">
-      <table class="spec-table">
-        <tr><td>Maße</td><td>400 × 400 × 15 mm</td></tr>
-        <tr><td>Material</td><td>Multiplex, nachhaltig produziert</td></tr>
-        <tr><td>Oberfläche</td><td>Perlbeschichtet, Weiß</td></tr>
-        <tr><td>Nutzung</td><td>Beidseitig (kantig / rund)</td></tr>
-        <tr><td>Nutung</td><td>Beidseitig gefräst</td></tr>
-        <tr><td>Systemgrenze A</td><td>Kantig – klare, strukturierte Grenze</td></tr>
-        <tr><td>Systemgrenze B</td><td>Rund – offene, fließende Grenze</td></tr>
-        <tr><td>Verpackung</td><td>Kantenschutz + Versandkarton</td></tr>
-        <tr><td>Aufbewahrung</td><td>Bedruckte Baumwolltasche</td></tr>
-      </table>
-      <div>
-        <div class="spec-box">
-          <h4>Warum beidseitige Systemgrenzen?</h4>
-          <p>
-            Die kantige Seite unterstützt Aufstellungen mit klarer Rollenstruktur und
-            definierten Grenzen. Die runde Seite eignet sich für dynamische Prozesse,
-            Entwicklungsaufstellungen und offene Systemfragen.
-            Kein anderes Produkt am Markt denkt das so konsequent durch.
-          </p>
-        </div>
-        <div class="spec-box">
-          <h4>Nachhaltigkeit</h4>
-          <p>
-            Das Brett wird aus Multiplex gefertigt, das aus nachhaltiger Produktion stammt –
-            handwerkliche Qualität aus einer Werkstatt, die soziale Verantwortung ernst nimmt.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- wave: off → navy (framework) -->
-<div class="wave wave-down" style="background:var(--white);">
-  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,0 C480,44 960,0 1440,32 L1440,44 L0,44 Z" fill="#140d69"/>
-  </svg>
-</div>
-
-<!-- FRAMEWORK -->
-<section class="framework has-deko" id="system">
-  <span class="deko" style="width:260px;height:260px;bottom:-100px;right:-80px;"></span>
-  <span class="deko square" style="width:90px;height:90px;top:60px;left:-30px;"></span>
-  <div class="section-inner">
-    <div class="section-tag">Systemisch handeln</div>
-    <h2 class="section-title">Analog & digital. Aus einem Guss.</h2>
-    <p class="section-sub">
-      Systemische Arbeit braucht den richtigen Raum – im Präsenzformat genauso wie
-      im digitalen Setting. Das Systembrett-Ökosystem verbindet beides nahtlos.
-    </p>
-    <div class="framework-grid">
-      <div class="framework-card">
-        <div class="fw-num">01 / Analog</div>
-        <h3>Haptisch aufstellen</h3>
-        <p>
-          Das Systembrett schafft im Raum eine Bühne für systemische Aufstellungen.
-          Figuren, Seile und Skalierungstreppe machen Rollen, Beziehungen und Dynamiken
-          unmittelbar greifbar – mit echter, physischer Präsenz.
-        </p>
-        <span class="fw-badge">Systembrett + Figurenset + Zubehör</span>
-      </div>
-      <div class="framework-card">
-        <div class="fw-num">02 / Digital</div>
-        <h3>Online weitermachen</h3>
-        <p>
-          coachingspace überträgt die Methodik in den digitalen Raum. Aufstellungen,
-          Innenperspektive und Reflexion – auch auf Distanz, auch im hybriden Setting,
-          auch zwischen den Sessions.
-        </p>
-      </div>
-      <div class="framework-card">
-        <div class="fw-num">03 / Verbunden</div>
-        <h3>Eine Methode, zwei Welten</h3>
-        <p>
-          Was analog beginnt, setzt sich digital fort – und umgekehrt. Klient·innen
-          begleiten, dokumentieren und vertiefen systemische Prozesse, egal wo
-          die Arbeit gerade stattfindet.
-        </p>
-        <span class="fw-badge">Analog ↔ Digital</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- wave: navy → white (digital) -->
-<div class="wave wave-up" style="background:var(--white);">
-  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,70 C480,0 960,44 1440,12 L1440,0 L0,0 Z" fill="#140d69"/>
-  </svg>
-</div>
-
-<!-- DIGITAL -->
-<section class="digital" style="padding: 80px 5% 0;">
-  <div class="section-inner">
-    <div class="digital-intro">
-      <div class="section-tag">Transfer / coachingspace</div>
-      <h2 class="section-title">Analog aufgestellt. Digital weitergedacht.</h2>
-      <p class="section-sub">
-        Was auf dem Brett beginnt, lässt sich in coachingspace digital weiterführen –
-        mit einem entscheidenden Vorteil, den kein analoges Brett bieten kann.
-      </p>
-    </div>
-    <div class="digital-screens">
-      <div class="screen-card">
-        <img src="images/digital-aussen.png" alt="Digitales Systembrett – Außenperspektive" />
-        <div class="screen-label">
-          <h4>Außenperspektive</h4>
-          <p>Überblick über das System – Brett, Figuren und Beziehungen auf einen Blick</p>
-        </div>
-      </div>
-      <div class="screen-card">
-        <img src="images/digital-innen.png" alt="Digitales Systembrett – Innenperspektive" />
-        <div class="screen-label">
-          <h4>Innenperspektive</h4>
-          <p>Sicht aus den Augen der Stellvertreterin – einzigartig im digitalen Raum</p>
-        </div>
-      </div>
-    </div>
-    <div class="digital-usp">
-      <div class="digital-usp-icon">👁</div>
-      <div>
-        <h3>Die Innenperspektive – ein Vorteil, den kein analoges Brett hat.</h3>
-        <p>
-          Online kann jede Figur ihre eigene Perspektive einnehmen: Wie sieht das System
-          aus den Augen der Tochter aus? Wo steht der Vater in ihrer Wahrnehmung?
-          Diese Perspektivwechsel – in der analogen Arbeit nur vorstellbar –
-          werden in coachingspace direkt erlebbar und sichtbar.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST -->
-<section class="trust-section">
-  <div class="section-inner">
-    <div class="trust-badges">
-      <div class="trust-badge">
-        <img src="images/DSGVOlogo.png" alt="DSGVO konform" style="height:90px; width:auto;" />
-        <div class="trust-badge-text">
-          <strong>DSGVO-konforme Videokonferenz</strong>
-          <span>Made and hosted in Germany</span>
-        </div>
-      </div>
-      <div class="trust-badge">
-        <img src="images/green.png" alt="Green IT – 0% CO₂" />
-        <div class="trust-badge-text">
-          <strong>Green IT</strong>
-          <span>0 % CO₂-Emission · 100 % Ökostrom</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GWO -->
-<section class="gwo has-deko">
-  <span class="deko square" style="width:160px;height:160px;top:-50px;right:5%;"></span>
-  <span class="deko" style="width:100px;height:100px;bottom:-30px;left:8%;"></span>
-  <div class="gwo-inner">
-    <div class="gwo-badge">
-      <img src="images/gwo-logo.png" alt="Gemeinnützige Werkstätten Oldenburg e.V." style="width:100%; max-width:220px; display:block; margin: 0 auto 16px;" />
-      <p>Mitglied im Diakonischen Werk</p>
-      <span class="gwo-flag">Für einen guten Zweck gefertigt · Deutschland</span>
-    </div>
-    <div class="gwo-text">
-      <div class="section-tag">Hinter dem Produkt</div>
-      <h2>Jedes Produkt trägt eine Geschichte.</h2>
-      <p>
-        Sowohl das <strong>Systembrett</strong> als auch die <strong>Aufstellungsfiguren des Kleinen Stellwerks</strong>
-        werden in den <strong>Gemeinnützigen Werkstätten Oldenburg (GWO e.V.)</strong> gefertigt –
-        in Handarbeit, mit Sorgfalt, von Menschen, denen diese Arbeit etwas bedeutet.
-      </p>
-      <p>
-        Die GWO ist seit 1960 eine durch die Bundesagentur für Arbeit anerkannte Werkstatt
-        für Menschen mit Beeinträchtigungen. Rund <strong>800 Menschen</strong> finden hier
-        Ausbildung, sinnstiftende Arbeit und individuelle Förderung –
-        heute als Mitglied im Diakonischen Werk.
-      </p>
-      <blockquote>„So viel Hilfe wie nötig, so wenig wie möglich."</blockquote>
-      <p>
-        Wenn du dieses Set kaufst, kaufst du kein Massenprodukt.
-        Du unterstützt direkt eine Werkstatt, die seit über 60 Jahren zeigt,
-        dass Qualität und sozialer Anspruch keine Gegensätze sind.
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- BUNDLES -->
 <section id="bundles" style="padding: 80px 5%; background: var(--white);">
   <div class="section-inner">
@@ -1518,13 +1301,13 @@
     <div class="bundle-config">
       <div class="bundle-config-items">
 
-        <div class="bundle-config-item" data-product="brett" data-price="109" data-name="Systembrett" onclick="toggleConfigItem(this)">
+        <div class="bundle-config-item" data-product="brett" data-price="95" data-name="Systembrett" onclick="toggleConfigItem(this)">
           <div class="bundle-config-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
           <div class="bundle-config-name">Das Brett</div>
           <h4>Systembrett</h4>
-          <div class="bundle-config-price js-price" data-brutto="109">109 €</div>
+          <div class="bundle-config-price js-price" data-brutto="95">95 €</div>
         </div>
 
         <div class="bundle-config-item" data-product="figuren" data-price="89" data-name="Kleines Stellwerk: Aufstellungsfiguren" onclick="toggleConfigItem(this)">
@@ -1691,6 +1474,163 @@
   </div>
 </section>
 
+<!-- GWO -->
+<section class="gwo has-deko">
+  <span class="deko square" style="width:160px;height:160px;top:-50px;right:5%;"></span>
+  <span class="deko" style="width:100px;height:100px;bottom:-30px;left:8%;"></span>
+  <div class="gwo-inner">
+    <div class="gwo-badge">
+      <img src="images/gwo-logo.png" alt="Gemeinnützige Werkstätten Oldenburg e.V." style="width:100%; max-width:220px; display:block; margin: 0 auto 16px;" />
+      <p>Mitglied im Diakonischen Werk</p>
+      <span class="gwo-flag">Für einen guten Zweck gefertigt · Deutschland</span>
+    </div>
+    <div class="gwo-text">
+      <div class="section-tag">Hinter dem Produkt</div>
+      <h2>Jedes Produkt trägt eine Geschichte.</h2>
+      <p>
+        Sowohl das <strong>Systembrett</strong> als auch die <strong>Aufstellungsfiguren des Kleinen Stellwerks</strong>
+        werden in den <strong>Gemeinnützigen Werkstätten Oldenburg (GWO e.V.)</strong> gefertigt –
+        in Handarbeit, mit Sorgfalt, von Menschen, denen diese Arbeit etwas bedeutet.
+      </p>
+      <p>
+        Die GWO ist seit 1960 eine durch die Bundesagentur für Arbeit anerkannte Werkstatt
+        für Menschen mit Beeinträchtigungen. Rund <strong>800 Menschen</strong> finden hier
+        Ausbildung, sinnstiftende Arbeit und individuelle Förderung –
+        heute als Mitglied im Diakonischen Werk.
+      </p>
+      <blockquote>„So viel Hilfe wie nötig, so wenig wie möglich."</blockquote>
+      <p>
+        Wenn du dieses Set kaufst, kaufst du kein Massenprodukt.
+        Du unterstützt direkt eine Werkstatt, die seit über 60 Jahren zeigt,
+        dass Qualität und sozialer Anspruch keine Gegensätze sind.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- wave: white → navy (framework) -->
+<div class="wave wave-down" style="background:var(--white);">
+  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C480,44 960,0 1440,32 L1440,44 L0,44 Z" fill="#140d69"/>
+  </svg>
+</div>
+
+<!-- FRAMEWORK -->
+<section class="framework has-deko" id="system">
+  <span class="deko" style="width:260px;height:260px;bottom:-100px;right:-80px;"></span>
+  <span class="deko square" style="width:90px;height:90px;top:60px;left:-30px;"></span>
+  <div class="section-inner">
+    <div class="section-tag">Systemisch handeln</div>
+    <h2 class="section-title">Analog & digital. Aus einem Guss.</h2>
+    <p class="section-sub">
+      Systemische Arbeit braucht den richtigen Raum – im Präsenzformat genauso wie
+      im digitalen Setting. Das Systembrett-Ökosystem verbindet beides nahtlos.
+    </p>
+    <div class="framework-grid">
+      <div class="framework-card">
+        <div class="fw-num">01 / Analog</div>
+        <h3>Haptisch aufstellen</h3>
+        <p>
+          Das Systembrett schafft im Raum eine Bühne für systemische Aufstellungen.
+          Figuren, Seile und Skalierungstreppe machen Rollen, Beziehungen und Dynamiken
+          unmittelbar greifbar – mit echter, physischer Präsenz.
+        </p>
+        <span class="fw-badge">Systembrett + Figurenset + Zubehör</span>
+      </div>
+      <div class="framework-card">
+        <div class="fw-num">02 / Digital</div>
+        <h3>Online weitermachen</h3>
+        <p>
+          coachingspace überträgt die Methodik in den digitalen Raum. Aufstellungen,
+          Innenperspektive und Reflexion – auch auf Distanz, auch im hybriden Setting,
+          auch zwischen den Sessions.
+        </p>
+      </div>
+      <div class="framework-card">
+        <div class="fw-num">03 / Verbunden</div>
+        <h3>Eine Methode, zwei Welten</h3>
+        <p>
+          Was analog beginnt, setzt sich digital fort – und umgekehrt. Klient·innen
+          begleiten, dokumentieren und vertiefen systemische Prozesse, egal wo
+          die Arbeit gerade stattfindet.
+        </p>
+        <span class="fw-badge">Analog ↔ Digital</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave: navy → white (digital) -->
+<div class="wave wave-up" style="background:var(--white);">
+  <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,70 C480,0 960,44 1440,12 L1440,0 L0,0 Z" fill="#140d69"/>
+  </svg>
+</div>
+
+<!-- DIGITAL -->
+<section class="digital" style="padding: 80px 5% 0;">
+  <div class="section-inner">
+    <div class="digital-intro">
+      <div class="section-tag">Transfer / coachingspace</div>
+      <h2 class="section-title">Analog aufgestellt. Digital weitergedacht.</h2>
+      <p class="section-sub">
+        Was auf dem Brett beginnt, lässt sich in coachingspace digital weiterführen –
+        mit einem entscheidenden Vorteil, den kein analoges Brett bieten kann.
+      </p>
+    </div>
+    <div class="digital-screens">
+      <div class="screen-card">
+        <img src="images/digital-aussen.png" alt="Digitales Systembrett – Außenperspektive" />
+        <div class="screen-label">
+          <h4>Außenperspektive</h4>
+          <p>Überblick über das System – Brett, Figuren und Beziehungen auf einen Blick</p>
+        </div>
+      </div>
+      <div class="screen-card">
+        <img src="images/digital-innen.png" alt="Digitales Systembrett – Innenperspektive" />
+        <div class="screen-label">
+          <h4>Innenperspektive</h4>
+          <p>Sicht aus den Augen der Stellvertreterin – einzigartig im digitalen Raum</p>
+        </div>
+      </div>
+    </div>
+    <div class="digital-usp">
+      <div class="digital-usp-icon">👁</div>
+      <div>
+        <h3>Die Innenperspektive – ein Vorteil, den kein analoges Brett hat.</h3>
+        <p>
+          Online kann jede Figur ihre eigene Perspektive einnehmen: Wie sieht das System
+          aus den Augen der Tochter aus? Wo steht der Vater in ihrer Wahrnehmung?
+          Diese Perspektivwechsel – in der analogen Arbeit nur vorstellbar –
+          werden in coachingspace direkt erlebbar und sichtbar.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section">
+  <div class="section-inner">
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <img src="images/DSGVOlogo.png" alt="DSGVO konform" style="height:90px; width:auto;" />
+        <div class="trust-badge-text">
+          <strong>DSGVO-konforme Videokonferenz</strong>
+          <span>Made and hosted in Germany</span>
+        </div>
+      </div>
+      <div class="trust-badge">
+        <img src="images/green.png" alt="Green IT – 0% CO₂" />
+        <div class="trust-badge-text">
+          <strong>Green IT</strong>
+          <span>0 % CO₂-Emission · 100 % Ökostrom</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- wave: white → navy (cta) -->
 <div class="wave wave-down" style="background:var(--white);">
   <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -1776,13 +1716,13 @@
   // jederzeit funktionsfähig. WICHTIG: Links erst eintragen, wenn AGB +
   // Widerrufsbelehrung online sind (echter Direktkauf = Fernabsatzrecht).
   const STRIPE_LINKS = {
-    'brett':                '',  // Systembrett – 109 €
+    'brett':                '',  // Systembrett – 95 €
     'figuren':              '',  // Kleines Stellwerk: Aufstellungsfiguren – 89 €
     'treppe':               '',  // Kleines Stellwerk: Skalierungstreppe – 49 €
-    'brett+figuren':        '',  // Brett + Figuren – 179 €
-    'brett+treppe':         '',  // Brett + Treppe – 149 €
+    'brett+figuren':        '',  // Brett + Figuren – 165 €
+    'brett+treppe':         '',  // Brett + Treppe – 135 €
     'figuren+treppe':       '',  // Figuren + Treppe – 110 €
-    'brett+figuren+treppe': ''   // Komplettpaket – 199 €
+    'brett+figuren+treppe': ''   // Komplettpaket – 185 €
   };
 
   function stripeLinkFor(keys) {
